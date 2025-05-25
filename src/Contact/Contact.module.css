@@ -1,0 +1,323 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.hero .seatwide {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(12px);
+  top: 0;
+  left: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero .heading {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Garamond", sans-serif;
+  font-size: 8vw;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+  text-shadow: 1px 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.hero .subheading {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Garamond", sans-serif;
+  font-size: 2.5vw;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  height: auto;
+  text-shadow: -2px 4px 7px rgba(0, 0, 0, 0.60);
+}
+
+.section1 {
+  background: #0c2d48;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section1 .maps {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section1 .maps-text {
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 512px;
+  position: relative;
+}
+
+.section1 .header {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  row-gap: 11px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.section1 .logo2white {
+  flex-shrink: 0;
+  width: 101px;
+  height: 101px;
+  position: relative;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.section1 .heading {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  position: relative;
+  width: 391px;
+  height: 87px;
+}
+
+.section1 .subheading {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-size: 39px;
+  font-weight: 400;
+  position: relative;
+  width: 512px;
+  height: 39px;
+}
+
+.section1 .address {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-size: 39px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  height: 148px;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 37px;
+  position: relative;
+  height: 100vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+
+.contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.section2 .reach-out {
+  color: #000000;
+  text-align: center;
+  font-family: "Garamond", sans-serif;
+  font-size: 96px;
+  font-weight: 500;
+  position: static;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 700px;
+  max-width: 100%;
+}
+
+.section2 .phone-caption,
+.section2 .whatsapp-caption,
+.section2 .viber-caption,
+.section2 .facebook-caption {
+  position: static;
+  width: auto;
+  height: auto;
+  font-size: 39px;
+  color: #000;
+  font-family: "Garamond", sans-serif;
+  text-align: left;
+  font-weight: 400;
+}
+
+.section2 .phone,
+.section2 .whatsapp,
+.section2 .viber,
+.section2 .facebook {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.section2 .inquiry-container {
+  background: #000;
+  border-radius: 20px;
+  padding: 40px 25px 37px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 674px;
+  height: 859px;
+  position: relative;
+}
+
+.section2 .inquiry-form,
+.section2 .name,
+.section2 .email,
+.section2 .message {
+  color: #fff;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+.section2 .inquiry-form {
+  font-size: 96px;
+  font-weight: 500;
+  width: 513px;
+  height: 87px;
+}
+
+.section2 .name,
+.section2 .email,
+.section2 .message {
+  font-size: 39px;
+  width: 560px;
+  height: 46px;
+}
+
+.section2 .tf {
+  background: #ffffff;
+  color: #000000;
+  font-family: "Garamond", sans-serif;
+  font-size: 24px;
+  border-radius: 20px;
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 565px;
+  height: 66px;
+}
+
+.section2 .ta {
+  background: #ffffff;
+  border-radius: 20px;
+  color: #000000;
+  font-family: "Garamond", sans-serif;
+  font-size: 24px;
+  padding: 8px;
+  align-items: center;
+  flex: 1;
+  width: 565px;
+}
+
+.submit-btn {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  font-size: 2vw;
+  border-radius: 0.625rem;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .section1 .maps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .section2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    min-height: unset;
+    margin: 5vh 0;
+  }
+  .section2 .inquiry-container {
+    width: 100vw;
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .section1,
+  .section2 {
+    width: 100vw;
+    min-height: unset;
+    padding: 1rem 0.5rem;
+  }
+  .section1 .maps-text,
+  .section2 .inquiry-container {
+    width: 98vw;
+    max-width: 100vw;
+    padding: 1rem 0.5rem;
+  }
+  .section1 .logo2white,
+  .section2 .phone,
+  .section2 .whatsapp,
+  .section2 .viber,
+  .section2 .facebook {
+    width: 50px;
+    height: 50px;
+  }
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100vw;
+  }
+}

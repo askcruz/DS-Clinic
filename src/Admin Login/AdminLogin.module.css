@@ -1,0 +1,146 @@
+.admin-login-page,
+.admin-login-page * {
+  box-sizing: border-box;
+}
+
+.admin-login-page {
+  background: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-login-page .front {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(7px);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.admin-login-page .login {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 48rem;
+  position: relative;
+  z-index: 1;
+}
+
+.admin-login-page .logo {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.admin-login-page .logo2 {
+  width: 7vw;
+  max-width: 110px;
+  height: auto;
+  object-fit: cover;
+}
+
+.admin-login-page .ds-clinic {
+  color: #000;
+  font-family: "Garamond", serif;
+  font-size: clamp(6rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+.admin-login-page .container {
+  background: #000;
+  border-radius: 1.25rem;
+  padding: 4vw 3vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 40rem;
+  min-height: 50vh;
+  z-index: 1;
+}
+
+.admin-login-page .admin-login {
+  color: #fff;
+  font-family: "Garamond", serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+
+.admin-login-page .fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.admin-login-page .username,
+.admin-login-page .password {
+  color: #fff;
+  font-family: "Garamond", serif;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  width: 100%;
+}
+
+.admin-login-page .textbox {
+  background: #fff;
+  border-radius: 1rem;
+  font-family: "Garamond", serif;
+  padding: 0.5rem 1rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  width: 100%;
+  height: 3rem;
+  max-height: 80px;
+  outline: none;
+  border: none;
+}
+
+.admin-login-btn {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0.625rem;
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-login-btn:hover,
+.admin-login-btn:focus {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+@media (max-width: 600px) {
+  .admin-login-page .container {
+    padding: 6vw 4vw;
+    min-height: 60vh;
+  }
+  .admin-login-page .login {
+    max-width: 98vw;
+    width: 98vw;
+  }
+  .admin-login-page .logo2 {
+    width: 18vw;
+    max-width: 80px;
+  }
+}

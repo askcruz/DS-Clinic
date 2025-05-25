@@ -1,0 +1,354 @@
+.hero {
+  background: radial-gradient(closest-side,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(111, 151, 184, 1) 100%);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .logo {
+  flex-shrink: 0;
+  width: 950px;
+  height: 576px;
+  position: relative;
+  object-fit: cover;
+}
+  
+.section1 {
+  position: relative;
+  padding-top: 15vh;
+  z-index: 1;
+  background-color: white;
+  width: 100vw;
+}
+
+.section1 .about-us-section {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.section1 .frame-1 {
+  flex-shrink: 0;
+  width: 1185px;
+  height: 799px;
+  position: relative;
+}
+
+.section1 .storefront {
+  border-radius: 20px;
+  width: 553.11px;
+  height: 370px;
+  position: absolute;
+  left: 14px;
+  top: 0px;
+  object-fit: cover;
+}
+
+.section1 .headshot {
+  border-radius: 20px;
+  width: 570px;
+  height: 570px;
+  position: absolute;
+  left: 595px;
+  top: 0px;
+  object-fit: cover;
+}
+
+.section1 .seatcloseup {
+  border-radius: 20px;
+  width: 553px;
+  height: 386px;
+  position: absolute;
+  left: 14px;
+  top: 413px;
+  object-fit: cover;
+}
+
+.section1 .seatbehind3 {
+  border-radius: 20px;
+  width: 273.33px;
+  height: 205px;
+  position: absolute;
+  left: 595px;
+  top: 594px;
+  object-fit: cover;
+}
+
+.section1 .frontdesk {
+  border-radius: 20px;
+  width: 273.33px;
+  height: 205px;
+  position: absolute;
+  left: 892px;
+  top: 594px;
+  object-fit: cover;
+}
+
+.section1 .frame-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 371px;
+  position: relative;
+}
+
+.frame-2 .Heading {
+  color: #000000;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-size: 80px;
+  line-height: 72px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.frame-2 .Subheading {
+  color: #000000;
+  text-align: left;
+  font-family: "Garamond", sans-serif;
+  font-size: 40px;
+  line-height: 39px;
+  font-weight: 400;
+  position: relative;
+  width: 355px;
+}
+
+.section2 {
+  position: relative;
+  margin-top: 15vh;
+  z-index: 2;
+  background: #0c2d48;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section2 .services-section {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.section2 .frame-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 547px;
+  height: 498px;
+  position: relative;
+}
+
+.section2 .Heading {
+  color: #ffffff;
+  text-align: right;
+  font-family: "Garamond", sans-serif;
+  font-size: 80px;
+  line-height: 72px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+}
+
+.section2 .Subheading {
+  color: #ffffff;
+  text-align: right;
+  font-family: "Garamond", sans-serif;
+  font-size: 40px;
+  line-height: 39px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+
+.section2 .smile {
+  border-radius: 20px;
+  flex-shrink: 0;
+  width: 960px;
+  height: 640px;
+  position: relative;
+  box-shadow: 0px 4px 15.5px 8px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  aspect-ratio: 3/2;
+}
+
+.section3 {
+  position: relative;
+  z-index: 3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section3 .contacts-appt {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.section3 .Heading {
+  color: #000000;
+  text-align: center;
+  font-family: "Garamond", sans-serif;
+  font-size: 160px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  flex: 1;
+}
+
+.contacts-btn,
+.apts-btn {
+  min-width: 480px;
+  width: 36vw;
+  max-width: 640px;
+  min-height: 90px;
+  height: 90px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  margin: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .hero .logo {
+    width: 60vw;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+  }
+  .section1 .frame-1 {
+    width: 90vw;
+    height: auto;
+    min-width: 320px;
+  }
+  .section2 .smile {
+    width: 70vw;
+    height: auto;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: auto;
+    min-height: 60vh;
+    padding: 2rem 0;
+  }
+  .section1 .about-us-section,
+  .section2 .services-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .section1 .frame-1,
+  .section2 .smile {
+    position: static;
+    width: 90vw;
+    max-width: 100%;
+    height: auto;
+  }
+  .section1 .storefront,
+  .section1 .headshot,
+  .section1 .seatcloseup,
+  .section1 .seatbehind3,
+  .section1 .frontdesk {
+    position: static;
+    width: 90vw;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  .section2 .frame-3 {
+    width: 90vw;
+    height: auto;
+  }
+  .section3 .Heading {
+    font-size: 10vw;
+  }
+  .contacts-btn,
+  .apts-btn {
+    min-width: 180px;
+    width: 80vw;
+    max-width: 98vw;
+    min-height: 48px;
+    height: 60px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero,
+  .section1,
+  .section2,
+  .section3 {
+    width: 100vw;
+    min-height: unset;
+    padding: 1rem 0.5rem;
+    flex-direction: column;
+  }
+  .hero .logo,
+  .section1 .frame-1,
+  .section2 .smile {
+    width: 98vw;
+    max-width: 100vw;
+    height: auto;
+  }
+  .frame-2 .Heading,
+  .section2 .Heading {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+  .frame-2 .Subheading,
+  .section2 .Subheading {
+    font-size: 1.2rem;
+    line-height: 1.1rem;
+    width: 98vw;
+  }
+  .section3 .Heading {
+    font-size: 2.5rem;
+  }
+  .contacts-btn,
+  .apts-btn {
+    min-width: 120px;
+    width: 95vw;
+    max-width: 100vw;
+    min-height: 40px;
+    height: 48px;
+    font-size: 1rem;
+  }
+}
