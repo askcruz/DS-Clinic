@@ -30,6 +30,8 @@
   z-index: 1;
   margin-bottom: 1rem;
   text-shadow: 1px 2px 20px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  animation: fadeInHero 1.2s ease-in forwards;
 }
 
 .hero .subheading {
@@ -42,6 +44,8 @@
   z-index: 1;
   height: auto;
   text-shadow: -2px 4px 7px rgba(0, 0, 0, 0.60);
+  opacity: 0;
+  animation: fadeInHero 1.2s ease-in forwards;
 }
 
 .section1 {
@@ -319,5 +323,127 @@
     align-items: flex-start;
     gap: 0.5rem;
     width: 100vw;
+  }
+}
+
+/* Animations */
+
+.hero.animate {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero.animate .heading {
+  animation: slideInUp 0.6s ease-out 0.3s both;
+}
+
+.hero.animate .subheading {
+  animation: slideInUp 0.6s ease-out 0.5s both;
+}
+
+.maps iframe {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.maps .maps-text {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 0.2s;
+}
+
+.maps.animate iframe {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.maps.animate .maps-text {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.maps.animate .header {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.maps.animate .address {
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.contact-body {
+  transform: translateX(-80px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.contact-body.animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.contact-body.animate .reach-out {
+  animation: slideInLeft 0.6s ease-out 0.2s both;
+}
+
+.contact-body.animate .contact-row:nth-child(2) {
+  animation: slideInLeft 0.5s ease-out 0.3s both;
+}
+
+.contact-body.animate .contact-row:nth-child(3) {
+  animation: slideInLeft 0.5s ease-out 0.4s both;
+}
+
+.contact-body.animate .contact-row:nth-child(4) {
+  animation: slideInLeft 0.5s ease-out 0.5s both;
+}
+
+.contact-body.animate .contact-row:nth-child(5) {
+  animation: slideInLeft 0.5s ease-out 0.6s both;
+}
+
+.inquiry-container {
+  transform: translateX(80px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transition-delay: 0.3s;
+}
+
+.contact-body.animate ~ .inquiry-container {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

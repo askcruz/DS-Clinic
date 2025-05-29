@@ -32,7 +32,7 @@ const Footer = () => {
                             <div className="footer-logo-section">
                                 <div className="footer-logo-stack">
                                     <div className="footer-logo-row">
-                                        <img className="footer-tooth-icon" src="logo2white.png" />
+                                        <img className="footer-tooth-icon" src="/logos/logo2white.png" />
                                         <span className="footer-clinic-name">DS Clinic</span>
                                     </div>
                                     <span className="footer-doctor-name">by Dr. Dlorah Shaneen C. Quiño</span>
@@ -48,7 +48,7 @@ const Footer = () => {
                                 aria-label="Visit our Facebook page">
                                 <img
                                     className="footer-facebook-icon"
-                                    src="fbwhite.png"
+                                    src="/icons/fbwhite.png"
                                     alt="Facebook" />
                             </button>
                         </div>

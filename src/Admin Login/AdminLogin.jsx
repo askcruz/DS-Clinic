@@ -7,7 +7,7 @@ const AdminLogin = () => {
       <img className={styles.front} src="storefront.jpg" />
       <div className={styles.login}>
         <div className={styles.logo}>
-          <img className={styles.logo2} src="logo2black.png" />
+          <img className={styles.logo2} src="/logos/logo2black.png" />
           <div className={styles["ds-clinic"]}>DS Clinic </div>
         </div>
         <div className={styles.container}>

@@ -38,7 +38,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <img src="logo2black.png" alt="DS Clinic Logo" className="logo2black" />
+            <img src="/logos/logo2black.png" alt="DS Clinic Logo" className="logo2black" />
           </div>
           <div className="navbar-items">
             {navItems.map((item, index) => (
