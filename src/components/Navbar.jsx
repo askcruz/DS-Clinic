@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
+import AboutUs from '../About Us/AboutUs';
 
 const navMap = {
   Home: '/',
-  About: '/about',
+  About: '/aboutus',
   Services: '/services',
-  'Book Now': '/book',
+  Booking: '/booking',
   Contacts: '/contact',
 };
 

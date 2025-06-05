@@ -1,0 +1,200 @@
+
+
+.hero-section-booking {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background: url('../Assets/booking-bg.svg') center center/cover no-repeat;
+}
+
+.hero-section-booking h1,
+.hero-section-booking p {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInHero 1.2s ease-in forwards;
+}
+
+.hero-section-booking h1 {
+    font-size: 10rem;
+    font-family: "Garamond", sans-serif;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    
+}
+
+.hero-section-booking p {
+    font-size: 3rem;
+    font-family: "Garamond", sans-serif;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/*Booking form*/
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #EAD7D1;
+    padding: 4rem 2rem;
+    gap: 6rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.bookingform-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FBF7F6;
+    padding: 3rem 2rem;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    border-radius: 1.8%;
+}
+
+.bookingform-container label {
+    font-size: 2.3rem;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.booking{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    gap: 4rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 3.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.form-row input,
+.form-row select {
+    font-size: 2.4rem;
+    flex: 1;
+}
+
+.form-row label {
+    width: 150px; 
+    text-align: left;
+    margin-right: 1.2rem;
+    font-size: 2.1rem; 
+}
+
+.hmo-row {
+    width: 100%;
+    text-align: left;
+}
+
+/* HMO additional form */
+
+.form-row-hmo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.form-row-hmo label p {
+    font-size: 2.3rem;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.form-row-hmo input {
+    font-size: 2.4rem;
+    flex: 1;
+}
+
+.form-row-id {
+    display: flex;
+    gap: 3.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.form-row-id label {
+    font-size: 2.3rem;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.form-row-id input{
+    font-size: 2.4rem;
+    flex: 1;
+}
+
+.submit-row {
+    width: 100%;
+    text-align: right;
+}
+
+.submit-button {
+    padding: 2rem 6rem;
+    background-color: #144e75;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Georgia', serif;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-section-booking h1 {
+        font-size: 8rem;
+    }
+
+    .hero-section-booking p {
+        font-size: 2.5rem;
+    }
+
+    .booking-form {
+        padding: 2rem 1rem;
+    }
+
+    .bookingform-container {
+        padding: 2rem 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-row input,
+    .form-row select {
+        width: 100%;
+    }
+}
+
+/* Animation for hero section */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

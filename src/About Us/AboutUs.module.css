@@ -1,0 +1,272 @@
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    background: url('../Assets/aboutus-bg.svg') center center/cover no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    scrollbar-width: none;
+}
+
+.about-hero-section h1,
+.about-hero-section p {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: fadeInHero 1.2s ease-in forwards;
+}
+
+.about-hero-section h1 {
+    font-size: 10rem;
+    font-family: "Garamond", sans-serif;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.about-hero-section p {
+    font-size: 3rem;
+    font-family: "Garamond", sans-serif;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/*vision and mission section*/
+
+.vision-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #0C2D48;
+    padding: 4rem 2rem;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.dentist-image-svg {
+    width: 50rem;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    animation: slideInLeft 1.2s ease-in forwards;
+}
+
+.vision-text {
+    max-width: 800px;
+    text-align: center;
+    color: #fff;
+    font-family: "Garamond", sans-serif;
+}
+
+.vision-text h2 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.vision-text p {
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+
+.mission-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    background: #FFFF;
+    padding: 4rem 2rem;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.patient-image-svg {
+    width: 50rem;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    animation: slideInRight 1.2s ease-in forwards;
+}
+
+.mission-text {
+    max-width: 800px;
+    text-align: center;
+    color: #050404;
+    font-family: "Garamond", sans-serif;
+}
+
+.mission-text h2 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.mission-text p {
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+
+/* HMO section and Schedule*/
+
+.about-hmo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #0C2D48;
+    padding: 4rem 2rem;
+    gap: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.about-hmo-section img {
+    margin: 1rem;
+    height: 180px;
+    object-fit: contain;
+    padding-top: 2rem;
+}
+
+.about-hmo-section h2 {
+    border-top: 5rem;
+    margin-top: 2rem;
+    font-family: "Garamond", sans-serif;
+    font-size: 5rem;
+    color: #ffffff;
+}
+
+/* Schedule section */
+
+.schedule-section {
+    background-color: #ffff;
+    color: #090808;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: "Garamond", sans-serif;
+}
+
+.schedule-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-section h4 {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-items {
+    gap: 0.5rem;
+  }
+  
+  .navbar-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-items {
+    gap: 0.25rem;
+  }
+  
+  .navbar-item {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+
+/*Responsive adjustments for other devices*/
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+    font-size: 6rem;
+  }
+
+  .hero-section p {
+    font-size: 2.5rem;
+  }
+
+  .vision-section, .mission-section, .hmo-section {
+    flex-direction: column;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .dentist-image-svg, .patient-image-svg {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .vision-text h2, .mission-text h2 {
+    font-size: 3rem;
+  }
+
+  .vision-text p, .mission-text p {
+    font-size: 2rem;
+  }
+
+  .hmo-section h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .hmo-section img {
+    height: 120px;
+  }
+}
+
+/* Animation for hero section */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
