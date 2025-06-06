@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import styles from './AboutUs.module.css'; // Import as CSS module
+import styles from './AboutUs.module.css';
 import '../components/Footer.css';
 import '../components/Navbar.css';
 
@@ -14,14 +14,20 @@ import hmo4 from '../Assets/cocolife.svg';
 import hmo5 from '../Assets/icare.svg';
 
 function AboutUs() {
+    const [animate, setAnimate] = useState(false);
+
+    useEffect(() => {
+        setAnimate(true);
+    }, []);
+
     return (
         <div className={styles['about-us-container']}>
-            <div className={styles['about-hero-section']}>
+            <div className={`${styles['about-hero-section']} ${animate ? styles.animate : ''}`}>
                 <h1>About Us</h1>
                 <p>Comfortable care, confident smiles.</p>
             </div>
             <Navbar />
-            <div className={styles['vision-section']}>
+            <div className={`${styles['vision-section']} ${animate ? styles.animate : ''}`}>
                 <img src={dentistImage} alt="dentist" className={styles['dentist-image-svg']} />
                 <div className={styles['vision-text']}>
                     <h2>Our Vision</h2>
@@ -30,7 +36,7 @@ function AboutUs() {
                 </div>
             </div>
 
-            <div className={styles['mission-section']}>
+            <div className={`${styles['mission-section']} ${animate ? styles.animate : ''}`}>
                 <img src={patientImage} alt="patient" className={styles['patient-image-svg']} />
                 <div className={styles['mission-text']}>
                     <h2>Our Mission</h2>
@@ -39,7 +45,7 @@ function AboutUs() {
                 </div>
             </div>
         
-            <div className={styles['about-hmo-section']}>
+            <div className={`${styles['about-hmo-section']} ${animate ? styles.animate : ''}`}>
                 <img src={hmo1} alt="inlife" className={styles['hmo-image-svg1']} />
                 <img src={hmo2} alt="valuecare" className={styles['hmo-image-svg2']} />
                 <img src={hmo3} alt="etiqua" className={styles['hmo-image-svg3']} />  

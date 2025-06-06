@@ -1,12 +1,12 @@
 import React from "react";
 import AdNav from "./AdNav";
 import NewAppointmentForm from "./NewAppointmentForm";
-import './Admin.css';
+import styles from "./Admin.module.css";
 
 function Appointment() {
 
     const [bookings, setBookings] = React.useState(() => {
-    return JSON.parse(localStorage.getItem("bookings")) || [];
+        return JSON.parse(localStorage.getItem("bookings")) || [];
     });
 
     const [selectedRows, setSelectedRows] = React.useState([]);
@@ -59,27 +59,25 @@ function Appointment() {
         );
         setBookings(updatedBookings);
         localStorage.setItem("bookings", JSON.stringify(updatedBookings));
-
-        // remove this row from editing
         setEditingRows(editingRows.filter((i) => i !== index));
     };
 
     return (
-        <div className="appointment-container">
+        <div>
             <AdNav />
-            <div className="appointment-content">
+            <div className={styles["appointment-content"]}>
                 <h1>Appointments</h1>
-                <div className="appointment-navigation">
-                    <div className="appointment-search">
+                <div className={styles["appointment-navigation"]}>
+                    <div className={styles["appointment-search"]}>
                         <input type="text" placeholder="Search by Patient Name or ID" />
                         <button>Search</button>
                     </div>
                     <button onClick={() => setShowNewForm(true)}>+ New Appointment</button>
                 </div>
-                <table className="appointment-table">
+                <table className={styles["appointment-table"]}>
                     <thead>
                         <tr>
-                            <th>   
+                            <th>
                                 <input type="checkbox" onChange={handleSelectAll} />
                             </th>
                             <th>ID</th>
@@ -142,18 +140,17 @@ function Appointment() {
                                 )}
                             </tr>
                         ))}
-                        </tbody>         
+                    </tbody>
                 </table>
                 {showNewForm && (
-                    <div className="modal">
-                        {/* You can create a NewAppointmentForm component or reuse Booking */}
+                    <div className={styles["modal"]}>
                         <NewAppointmentForm
                             onSubmit={handleAddBooking}
                             onClose={() => setShowNewForm(false)}
                         />
                     </div>
                 )}
-                <div className="appointment-actions">
+                <div className={styles["appointment-actions"]}>
                     <button onClick={handleDeleteSelected} disabled={selectedRows.length === 0}>
                         - Delete Selected
                     </button>

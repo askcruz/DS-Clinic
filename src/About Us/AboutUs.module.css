@@ -270,3 +270,48 @@
     opacity: 1;
   }
 }
+
+/* Animation trigger classes */
+
+
+.about-hero-section.animate h1,
+.about-hero-section.animate p {
+  opacity: 1;
+  animation: fadeInHero 1.2s ease-in forwards;
+}
+
+.vision-section.animate .dentist-image-svg {
+  opacity: 1;
+  animation: slideInLeft 1.2s ease-in forwards;
+}
+.vision-section.animate .vision-text {
+  opacity: 1;
+  animation: fadeInHero 1.2s 0.2s ease-in forwards;
+}
+
+.mission-section.animate .patient-image-svg {
+  opacity: 1;
+  animation: slideInRight 1.2s ease-in forwards;
+}
+.mission-section.animate .mission-text {
+  opacity: 1;
+  animation: fadeInHero 1.2s 0.2s ease-in forwards;
+}
+
+.about-hmo-section.animate img,
+.about-hmo-section.animate h2 {
+  opacity: 1;
+  animation: fadeInHero 1.2s 0.4s ease-in forwards;
+}
+
+/* Set initial opacity for animated elements */
+.about-hero-section h1,
+.about-hero-section p,
+.vision-section .dentist-image-svg,
+.vision-section .vision-text,
+.mission-section .patient-image-svg,
+.mission-section .mission-text,
+.about-hmo-section img,
+.about-hmo-section h2 {
+  opacity: 0;
+}

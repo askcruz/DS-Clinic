@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Admin.css';
+import styles from './Admin.module.css';
 
 import aLogo from '../Assets/dsLogo.svg'; 
 
@@ -22,18 +22,18 @@ const AdNav = () => {
     };
 
     return (
-        <nav className="admin-navbar">
-            <div className="admin-navbar-container">
-                <div className="admin-navbar-content">
-                    <div className="admin-navbar-logo">
-                        <img src={aLogo} alt="dsLogo" className="admin-logo" />
+        <nav className={styles["admin-navbar"]}>
+            <div className={styles["admin-navbar-container"]}>
+                <div className={styles["admin-navbar-content"]}>
+                    <div className={styles["admin-navbar-logo"]}>
+                        <img src={aLogo} alt="dsLogo" className={styles["admin-logo"]} />
                     </div>
-                    <div className="admin-navbar-items">
+                    <div className={styles["admin-navbar-items"]}>
                         {navItems.map((item, index) => (
                             <button
                                 key={index}
                                 onClick={() => handleNavClick(item)}
-                                className="admin-navbar-item"
+                                className={styles["admin-navbar-item"]}
                             >
                                 {item}
                             </button>
@@ -43,7 +43,6 @@ const AdNav = () => {
             </div>
         </nav>
     );
-
 }
 
 export default AdNav;
