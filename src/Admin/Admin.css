@@ -1,0 +1,362 @@
+.admin-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13vw;
+    height: 100vh;
+    background: #10324a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.admin-navbar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-navbar-logo {
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+}
+
+.admin-navbar-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.admin-navbar-item {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.1rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.admin-navbar-item:hover,
+.admin-navbar-item:focus {
+    background: #17496b;
+    outline: none;
+}
+
+/*Appointment section*/
+
+/* Add a main content wrapper to handle the offset */
+.main-content-wrapper {
+    min-height: 100vh;
+    margin-left: 14vw;
+    padding: 0;
+    box-sizing: border-box;
+    width: calc(100% - 14vw);
+}
+
+.appointment-content {
+    margin-left: 13vw;
+    padding: 2rem;
+    width: calc(100% - 13vw);
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.appointment-content h1 {
+    width: auto;
+    min-width: 300px;
+    background: #fff;
+    color: #10324a;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-left: 6px solid #10324a;
+    box-shadow: none;
+    margin-bottom: 2rem;
+}
+
+/*Appointment table*/
+
+.appointment-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #f2f2f2;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.3rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #010000;
+}
+
+.appointment-table th, .appointment-table td {
+    border: 1px solid #232121;
+    padding: 1.6rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appointment-table tr {
+    background: #e5e7ef;
+    transition: background-color 0.2s ease;
+}
+
+.appointment-table tr:hover {
+    background: #d9dbe4;
+}
+
+.appointment-table th {
+    background: #ffffff;
+    font-weight: 600;
+    color: #1c1b1b;
+}
+
+.appointment-table tr:nth-child(even) {
+    background: #fff7f7;
+}
+
+.appointment-table tr:nth-child(odd) {
+    background: #D9D9D9;
+}
+
+.appointment-table td {
+    color:#2e83bc;
+}
+
+/* Add styles for the confirmed status */
+.appointment-table td:nth-child(4) {
+    color: #2d8540;
+    font-weight: 500;
+}
+
+/* Style for the date column */
+.appointment-table td:nth-child(8) {
+    color: #8b0e0e;
+}
+
+.appointment-table a {
+    color: #17496b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+    cursor: pointer;
+}
+
+/*edit and delete buttons*/
+
+.appointment-actions {
+    display: flex;
+    justify-content: flex-end;  
+    align-items: flex-end;     
+    gap: 1.5rem;
+    margin-top: 4.5rem;
+    height: auto;
+    padding: 1rem 0;
+}
+
+.appointment-actions button {
+    background: #17496b;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20rem;
+}
+
+.appointment-actions button:hover {
+    background: #10324a;
+}
+
+/*New Appointment button & Search bar*/
+
+.appointment-navigation {
+    display: flex;
+    justify-content: space-between; /* space between left and right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.appointment-search {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.appointment-search input[type="text"] {
+    padding: 1rem 1.2rem;
+    border: 1px solid #232121;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    background: #fff;
+    color: #10324a;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.appointment-search input[type="text"]:focus {
+    border: 1.5px solid #17496b;
+}
+
+.appointment-search button {
+    background: #17496b;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: background 0.2s;
+}
+
+.appointment-search button:hover {
+    background: #10324a;
+}
+
+.appointment-navigation > button {
+    background: #17496b;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10rem;
+    transition: background 0.2s;
+}
+
+.appointment-navigation > button:hover {
+    background: #10324a;
+}
+
+/*New Appointment section*//* Modal overlay for the form */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(16, 50, 74, 0.25); /* semi-transparent dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+/* Style the form to look like the table */
+.modal form {
+    background: #f2f2f2;
+    border: 1px solid #010000;
+    border-radius: 1rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.15);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    min-width: 350px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.3rem;
+}
+
+.modal form input,
+.modal form select {
+    padding: 1rem 1.2rem;
+    border: 1px solid #232121;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    background: #fff;
+    color: #10324a;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.modal form input:focus,
+.modal form select:focus {
+    border: 1.5px solid #17496b;
+}
+
+.modal form button[type="submit"] {
+    background: #17496b;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+}
+
+.modal form button[type="submit"]:hover {
+    background: #10324a;
+}
+
+.modal form button[type="button"] {
+    background: #fff;
+    color: #17496b;
+    border: 1px solid #17496b;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20rem;
+    margin-left: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.modal form button[type="button"]:hover {
+    background: #17496b;
+    color: #fff;
+}
+
+/*Dashboard section*/
+
+.dashboard-content {
+    margin-left: 13vw;
+    padding: 2rem;
+    width: calc(100% - 13vw);
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.dashboard-content h1 {
+    width: auto;
+    min-width: 300px;
+    background: #fff;
+    color: #10324a;
+    font-size: 3.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 0;
+    border-left: 6px solid #10324a;
+    box-shadow: none;
+    margin-bottom: 2rem;
+}

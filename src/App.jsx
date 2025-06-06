@@ -7,6 +7,8 @@ import Homepage from "./Homepage/Homepage"; // Example, create this if not prese
 import AdminLogin from "./Admin Login/AdminLogin"; // Example, create this if not present
 import AboutUs from "./About Us/AboutUs"; // Example, create this if not present
 import Booking from "./Book Now/Booking";
+import Appointment from "./Admin/Appointment";
+import Dashboard from "./Admin/Dashboard"; // Example, create this if not present
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="/admin/appointment" element={<Appointment />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>
