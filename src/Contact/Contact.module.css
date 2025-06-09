@@ -1,18 +1,16 @@
 .hero {
   display: flex;
   flex-direction: column;
-  gap: 0px;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   height: 100vh;
   position: relative;
 }
 
 .hero .seatwide {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   filter: blur(12px);
   top: 0;
   left: 0;
@@ -67,6 +65,18 @@
   margin-right: auto;
 }
 
+.iframe-wrapper {
+  width: 40vw;
+  max-width: 747px; 
+  aspect-ratio: 4 / 3; 
+  height: auto;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .section1 .maps-text {
   display: flex;
   flex-direction: column;
@@ -105,33 +115,31 @@
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: 96px;
+  font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
   font-weight: 700;
   position: relative;
   width: 391px;
-  height: 87px;
+  height: auto;
 }
 
 .section1 .subheading {
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: 39px;
+  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
   font-weight: 400;
   position: relative;
   width: 512px;
-  height: 39px;
+  height: auto;
 }
 
 .section1 .address {
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: 39px;
+  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
   font-weight: 400;
-  position: relative;
-  align-self: stretch;
-  height: 148px;
+  height: auto;
 }
 
 .section2 {
@@ -139,11 +147,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 37px;
+  gap: 2rem;
   position: relative;
   height: 100vh;
   margin-top: 15vh;
   margin-bottom: 15vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 .contact-body {
@@ -162,7 +172,7 @@
   color: #000000;
   text-align: center;
   font-family: "Garamond", sans-serif;
-  font-size: 96px;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
   font-weight: 500;
   position: static;
   margin-bottom: 1rem;
@@ -184,7 +194,7 @@
   position: static;
   width: auto;
   height: auto;
-  font-size: 39px;
+  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
   color: #000;
   font-family: "Garamond", sans-serif;
   text-align: left;
@@ -195,8 +205,8 @@
 .section2 .whatsapp,
 .section2 .viber,
 .section2 .facebook {
-  width: 100px;
-  height: 100px;
+  width: 75px;
+  height: auto;
   object-fit: cover;
   aspect-ratio: 1;
 }
@@ -204,15 +214,18 @@
 .section2 .inquiry-container {
   background: #000;
   border-radius: 20px;
-  padding: 40px 25px 37px 25px;
+  padding-top: clamp(1rem, 5vw, 3rem); /* min: 16px, preferred: scales with viewport, max: 40px */
+  padding-right: clamp(0.75rem, 3vw, 1.5rem); /* min: 12px, preferred: scales with viewport, max: 25px */
+  padding-bottom: clamp(1rem, 4vw, 3rem); /* min: 16px, preferred: scales with viewport, max: 37px */
+  padding-left: clamp(0.75rem, 3vw, 1.5rem);
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 674px;
-  height: 859px;
+  width: 40vw;
+  height: auto;
   position: relative;
 }
 
@@ -228,10 +241,8 @@
 }
 
 .section2 .inquiry-form {
-  font-size: 96px;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
   font-weight: 500;
-  width: 513px;
-  height: 87px;
 }
 
 .section2 .name,
