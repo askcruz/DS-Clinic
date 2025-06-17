@@ -1,16 +1,18 @@
 .hero {
   display: flex;
   flex-direction: column;
+  gap: 0px;
   align-items: center;
   justify-content: center;
+  width: 100vw;
   height: 100vh;
   position: relative;
 }
 
 .hero .seatwide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   filter: blur(12px);
   top: 0;
   left: 0;
@@ -65,18 +67,6 @@
   margin-right: auto;
 }
 
-.iframe-wrapper {
-  width: 40vw;
-  max-width: 747px; 
-  aspect-ratio: 4 / 3; 
-  height: auto;
-}
-
-.iframe-wrapper iframe {
-  width: 100%;
-  height: 100%;
-}
-
 .section1 .maps-text {
   display: flex;
   flex-direction: column;
@@ -115,31 +105,33 @@
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
+  font-size: 96px;
   font-weight: 700;
   position: relative;
   width: 391px;
-  height: auto;
+  height: 87px;
 }
 
 .section1 .subheading {
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
+  font-size: 39px;
   font-weight: 400;
   position: relative;
   width: 512px;
-  height: auto;
+  height: 39px;
 }
 
 .section1 .address {
   color: #ffffff;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
+  font-size: 39px;
   font-weight: 400;
-  height: auto;
+  position: relative;
+  align-self: stretch;
+  height: 148px;
 }
 
 .section2 {
@@ -147,13 +139,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 37px;
   position: relative;
   height: 100vh;
   margin-top: 15vh;
   margin-bottom: 15vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
 }
 
 .contact-body {
@@ -172,7 +162,7 @@
   color: #000000;
   text-align: center;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+  font-size: 96px;
   font-weight: 500;
   position: static;
   margin-bottom: 1rem;
@@ -194,7 +184,7 @@
   position: static;
   width: auto;
   height: auto;
-  font-size: clamp(1rem, 2vw + 0.8rem, 2.30rem);
+  font-size: 39px;
   color: #000;
   font-family: "Garamond", sans-serif;
   text-align: left;
@@ -205,8 +195,8 @@
 .section2 .whatsapp,
 .section2 .viber,
 .section2 .facebook {
-  width: 75px;
-  height: auto;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   aspect-ratio: 1;
 }
@@ -214,18 +204,15 @@
 .section2 .inquiry-container {
   background: #000;
   border-radius: 20px;
-  padding-top: clamp(1rem, 5vw, 3rem); /* min: 16px, preferred: scales with viewport, max: 40px */
-  padding-right: clamp(0.75rem, 3vw, 1.5rem); /* min: 12px, preferred: scales with viewport, max: 25px */
-  padding-bottom: clamp(1rem, 4vw, 3rem); /* min: 16px, preferred: scales with viewport, max: 37px */
-  padding-left: clamp(0.75rem, 3vw, 1.5rem);
+  padding: 40px 25px 37px 25px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 25px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 40vw;
-  height: auto;
+  width: 674px;
+  height: 859px;
   position: relative;
 }
 
@@ -241,8 +228,10 @@
 }
 
 .section2 .inquiry-form {
-  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+  font-size: 96px;
   font-weight: 500;
+  width: 513px;
+  height: 87px;
 }
 
 .section2 .name,

@@ -2,6 +2,7 @@
   background: radial-gradient(closest-side,
       rgba(255, 255, 255, 0) 0%,
       rgb(111, 151, 184) 100%);
+  width: 100vw;
   height: 100vh;
   position: relative;
   display: flex;
@@ -9,16 +10,14 @@
   gap: 30px;
   align-items: center;
   justify-content: center;
-  /* width: 100vw; */
 }
 
 .hero .logo {
   flex-shrink: 0;
-  width: 50vw;         
-  max-width: 800px;    
-  min-width: 200px;
-  height: auto;
+  width: 950px;
+  height: 576px;
   position: relative;
+  object-fit: cover;
   opacity: 0;
   animation: fadeInHero 1.2s ease-in forwards;
 }
@@ -28,13 +27,13 @@
   padding-top: 15vh;
   z-index: 1;
   background-color: white;
-  /* width: 100vw; */
+  width: 100vw;
 }
 
 .section1 .about-us-section {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 3px;
   align-items: center;
   justify-content: center;
   margin-left: auto;
@@ -44,25 +43,69 @@
 
 .section1 .frame-1 {
   flex-shrink: 0;
-  width: 60vw;
-  height: auto;
+  width: 1185px;
+  height: 799px;
   position: relative;
 }
 
-.section1 .frame-1 img {
-  width: 100%;
-  height: auto;
+.section1 .storefront {
+  border-radius: 20px;
+  width: 553.11px;
+  height: 370px;
+  position: absolute;
+  left: 14px;
+  top: 0px;
+  object-fit: cover;
+}
+
+.section1 .headshot {
+  border-radius: 20px;
+  width: 570px;
+  height: 570px;
+  position: absolute;
+  left: 595px;
+  top: 0px;
+  object-fit: cover;
+}
+
+.section1 .seatcloseup {
+  border-radius: 20px;
+  width: 553px;
+  height: 386px;
+  position: absolute;
+  left: 14px;
+  top: 413px;
+  object-fit: cover;
+}
+
+.section1 .seatbehind3 {
+  border-radius: 20px;
+  width: 273.33px;
+  height: 205px;
+  position: absolute;
+  left: 595px;
+  top: 594px;
+  object-fit: cover;
+}
+
+.section1 .frontdesk {
+  border-radius: 20px;
+  width: 273.33px;
+  height: 205px;
+  position: absolute;
+  left: 892px;
+  top: 594px;
+  object-fit: cover;
 }
 
 .section1 .frame-2 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 33px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   width: 371px;
-  height: auto;
   position: relative;
 }
 
@@ -70,8 +113,8 @@
   color: #000000;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
-  line-height: 4rem;
+  font-size: 80px;
+  line-height: 72px;
   font-weight: 400;
   position: relative;
   align-self: stretch;
@@ -81,8 +124,8 @@
   color: #000000;
   text-align: left;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2rem);
-  line-height: 2rem;
+  font-size: 40px;
+  line-height: 39px;
   font-weight: 400;
   position: relative;
   width: 355px;
@@ -97,13 +140,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: 100vw; */
 }
 
 .section2 .services-section {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 32px;
   align-items: center;
   justify-content: center;
   width: fit-content;
@@ -113,12 +155,12 @@
 .section2 .frame-3 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 20px;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   width: 547px;
-  height: auto;
+  height: 498px;
   position: relative;
 }
 
@@ -126,8 +168,8 @@
   color: #ffffff;
   text-align: right;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
-  line-height: 4rem;
+  font-size: 80px;
+  line-height: 72px;
   font-weight: 400;
   position: relative;
   align-self: stretch;
@@ -138,8 +180,8 @@
   color: #ffffff;
   text-align: right;
   font-family: "Garamond", sans-serif;
-  font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2rem);
-  line-height: 2rem;
+  font-size: 40px;
+  line-height: 39px;
   font-weight: 400;
   position: relative;
   align-self: stretch;
@@ -148,8 +190,8 @@
 .section2 .smile {
   border-radius: 20px;
   flex-shrink: 0;
-  width: 50vw;
-  height: auto;
+  width: 960px;
+  height: 640px;
   position: relative;
   box-shadow: 0px 4px 15.5px 8px rgba(0, 0, 0, 0.25);
   object-fit: cover;
@@ -245,6 +287,18 @@
     width: 90vw;
     max-width: 100%;
     height: auto;
+  }
+
+  .section1 .storefront,
+  .section1 .headshot,
+  .section1 .seatcloseup,
+  .section1 .seatbehind3,
+  .section1 .frontdesk {
+    position: static;
+    width: 90vw;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
   }
 
   .section2 .frame-3 {
@@ -428,4 +482,3 @@
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
-

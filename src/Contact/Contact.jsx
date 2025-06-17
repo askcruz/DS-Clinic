@@ -5,34 +5,34 @@ import Footer from "../components/Footer";
 import { useEffect, useRef, useState } from "react";
 
 const useScrollAnimation = () => {
-    const ref = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            {
-                threshold: 0.3,
-                rootMargin: '0px 0px -50px 0px'
-            }
-        );
-
-        if (ref.current) {
-            observer.observe(ref.current);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
         }
+      },
+      {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
 
-        return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
-            }
-        };
-    }, []);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
-    return [ref, isVisible];
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
+  return [ref, isVisible];
 };
 
 const Contact = () => {
@@ -43,7 +43,7 @@ const Contact = () => {
     return (
         <div>
             <Navbar />
-            <div
+            <div 
                 className={`${styles.hero} ${isHeroVisible ? styles.animate : ''}`}
                 ref={heroRef}
             >
@@ -56,19 +56,18 @@ const Contact = () => {
             </div>
 
             <div className={styles.section1}>
-                <div
+                <div 
                     className={`${styles.maps} ${isMapsVisible ? styles.animate : ''}`}
                     ref={mapsRef}
                 >
-                    <div className={styles["iframe-wrapper"]}>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.212733773944!2d121.0568567!3d14.5298208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a485e00195%3A0xad1057249262fb95!2sDLORAH%20DENTAL%20AND%20ORTHODONTIC%20CLINIC!5e0!3m2!1sen!2sph!4v1747933906188!5m2!1sen!2sph"
-                            style={{ border: 0 }}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.212733773944!2d121.0568567!3d14.5298208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a485e00195%3A0xad1057249262fb95!2sDLORAH%20DENTAL%20AND%20ORTHODONTIC%20CLINIC!5e0!3m2!1sen!2sph!4v1747933906188!5m2!1sen!2sph"
+                        width="747"
+                        height="562"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                     <div className={styles["maps-text"]}>
                         <div className={styles.header}>
                             <img className={styles.logo2white} src="/logos/logo2white.png" />
@@ -85,9 +84,10 @@ const Contact = () => {
             </div>
 
             <div className={styles.section2}>
-                <div
+                <div 
                     className={`${styles["contact-body"]} ${isContactVisible ? styles.animate : ''}`}
-                    ref={contactRef}>
+                    ref={contactRef}
+                >
                     <div className={styles["reach-out"]}>Reach out! </div>
                     <div className={styles["contact-row"]}>
                         <img className={styles.phone} src="/icons/phone.png" />
