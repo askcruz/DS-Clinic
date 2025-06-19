@@ -1,29 +1,51 @@
-import React from "react";
+import React, {useState, useEffect}from "react";
+import { supabase } from "./createBooking";
 import AdNav from "./AdNav";
 import NewAppointmentForm from "./NewAppointmentForm";
 import styles from "./Admin.module.css";
 
 function Appointment() {
-
-    const [bookings, setBookings] = React.useState(() => {
-        return JSON.parse(localStorage.getItem("bookings")) || [];
-    });
-
+    // const [bookings, setBookings] = React.useState(() => {
+    //     return JSON.parse(localStorage.getItem("bookings")) || [];
+    // });
+    const [bookings, setBookings] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [selectedRows, setSelectedRows] = React.useState([]);
     const [editingRows, setEditingRows] = React.useState([]);
     const [showNewForm, setShowNewForm] = React.useState(false);
 
-    React.useEffect(() => {
-        const data = JSON.parse(localStorage.getItem("bookings") || "[]");
-        setBookings(data);
+    useEffect(() => {
+        fetchBookings();
     }, []);
 
-    const handleAddBooking = (newBooking) => {
-        const updatedBookings = [...bookings, newBooking];
-        setBookings(updatedBookings);
-        localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+    const fetchBookings = async () => {
+        try {
+            setLoading(true);
+            const { data, error } = await supabase
+                .from('booking')
+                .select('*');
+            if (error) throw error;
+            setBookings(data || []);
+        } catch (error) {
+            console.error('Error fetching bookings:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleAddBooking = async (newBooking) => {
+    try {
+        const { data, error } = await supabase
+            .from('booking')
+            .insert([newBooking])
+            .select();
+        if (error) throw error;
+        setBookings(prev => [data[0], ...prev]);
         setShowNewForm(false);
+    } catch (error) {
+        console.error('Error adding booking:', error);
     }
+};
 
     const handleRowSelect = (index) => {
         setSelectedRows(prev =>
@@ -42,25 +64,49 @@ function Appointment() {
         }
     };
 
-    const handleDeleteSelected = () => {
+    const handleDeleteSelected = async () => {
+    try {
+        const selectedBookings = selectedRows.map(index => bookings[index]);
+        const idsToDelete = selectedBookings.map(booking => booking.id);
+        
+        const { error } = await supabase
+            .from('booking')
+            .delete()
+            .in('id', idsToDelete);
+            
+        if (error) throw error;
+        
         const newBookings = bookings.filter((_, index) => !selectedRows.includes(index));
         setBookings(newBookings);
-        localStorage.setItem("bookings", JSON.stringify(newBookings));
         setSelectedRows([]);
-    };
+    } catch (error) {
+        console.error('Error deleting bookings:', error);
+    }
+};
 
     const handleEditSelected = () => {
         setEditingRows(selectedRows);
     };
 
-    const handleEditSave = (index, updatedData) => {
+    const handleEditSave = async (index, updatedData) => {
+    try {
+        const booking = bookings[index];
+        const { error } = await supabase
+            .from('booking')
+            .update(updatedData)
+            .eq('id', booking.id);
+            
+        if (error) throw error;
+        
         const updatedBookings = bookings.map((booking, i) =>
             i === index ? { ...booking, ...updatedData } : booking
         );
         setBookings(updatedBookings);
-        localStorage.setItem("bookings", JSON.stringify(updatedBookings));
         setEditingRows(editingRows.filter((i) => i !== index));
-    };
+    } catch (error) {
+        console.error('Error updating booking:', error);
+    }
+};
 
     return (
         <div>
