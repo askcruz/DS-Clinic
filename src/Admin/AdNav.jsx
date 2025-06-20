@@ -7,7 +7,7 @@ import aLogo from '../Assets/dsLogo.svg';
 const AdNav = () => {
     const navigate = useNavigate();
 
-    const navItems = ['Dashboard', 'Appointment', 'Profile'];
+    const navItems = ['Dashboard', 'Appointment', 'Profile', 'Inquiry'];
 
     const handleNavClick = (item) => {
         if (item === 'Dashboard') {
@@ -16,6 +16,8 @@ const AdNav = () => {
             navigate('/admin/appointment');
         } else if (item === 'Profile') {
             navigate('/admin/profile');
+        } else if (item === 'Inquiry') { //added this for 
+            navigate('/admin/Inquiry'); 
         } else {
             console.log(`Navigating to: ${item}`);
         }
