@@ -5,7 +5,7 @@ While the clinic already has a social media presence, the website serves as a mo
 
 
 ## Group 13: Members
-* Aquino, Leona Raine: @lryona
+* Aquino, Leona Raine: @lrdevs
 * Chang, Dash Michael: @Yoraux
 * Cruz, Audrize ShemKeane: @askcruz
 * Felipe, Julienne Dana: @Felipe-JD
