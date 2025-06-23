@@ -91,6 +91,17 @@
 }
 
 /*Appointment table*/
+    
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.appointment-table {
+    min-width: 1100px;   /* or whatever fits your columns */
+    width: max-content;  /* only as wide as needed */
+    margin: 0 auto;
+}
 
 .appointment-table {
     width: 100%;

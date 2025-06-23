@@ -7,17 +7,17 @@ import aLogo from '../Assets/dsLogo.svg';
 const AdNav = () => {
     const navigate = useNavigate();
 
-    const navItems = ['Dashboard', 'Appointment', 'Profile', 'Inquiry'];
+    const navItems = ['Dashboard', 'Appointment', 'Inquiry', 'Profile']; 
 
     const handleNavClick = (item) => {
         if (item === 'Dashboard') {
             navigate('/admin/dashboard');
         } else if (item === 'Appointment') {
             navigate('/admin/appointment');
-        } else if (item === 'Profile') {
-            navigate('/admin/profile');
-        } else if (item === 'Inquiry') { //added this for 
-            navigate('/admin/Inquiry'); 
+        } else if (item === 'Inquiry') {
+            navigate('/admin/inquiry');
+        } else if (item === 'Profile') { //added this for 
+            navigate('/admin/profile'); 
         } else {
             console.log(`Navigating to: ${item}`);
         }
