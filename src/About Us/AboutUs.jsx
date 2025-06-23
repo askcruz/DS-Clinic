@@ -5,8 +5,6 @@ import styles from './AboutUs.module.css';
 import '../components/Footer.css';
 import '../components/Navbar.css';
 
-import dentistImage from '../Assets/dentist.svg';
-import patientImage from '../Assets/patient.svg';
 import hmo1 from '../Assets/inlife.svg';
 import hmo2 from '../Assets/valuecare.svg'; 
 import hmo3 from '../Assets/etiqua.svg';
@@ -28,7 +26,7 @@ function AboutUs() {
             </div>
             <Navbar />
             <div className={`${styles['vision-section']} ${animate ? styles.animate : ''}`}>
-                <img src={dentistImage} alt="dentist" className={styles['dentist-image-svg']} />
+                <img src="/doc-better.jpg" alt="doctor" className={styles['dentist-image-svg']} />
                 <div className={styles['vision-text']}>
                     <h2>Our Vision</h2>
                     <p>To be a leading dental clinic recognized for excellence in patient care, 
@@ -37,7 +35,7 @@ function AboutUs() {
             </div>
 
             <div className={`${styles['mission-section']} ${animate ? styles.animate : ''}`}>
-                <img src={patientImage} alt="patient" className={styles['patient-image-svg']} />
+                <img src="/dentist.jpg  " alt="patient" className={styles['patient-image-svg']} />
                 <div className={styles['mission-text']}>
                     <h2>Our Mission</h2>
                     <p>To deliver high-quality and compassionate dental care in a comfortable environment,
