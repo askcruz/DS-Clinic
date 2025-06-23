@@ -144,3 +144,7 @@
     max-width: 80px;
   }
 }
+
+.errorPlaceholder::placeholder {
+  color: red;
+}
