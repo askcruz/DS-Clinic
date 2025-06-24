@@ -3,13 +3,14 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./Services/Services";
 import Contact from "./Contact/Contact";
-import Homepage from "./Homepage/Homepage"; // Example, create this if not present
-import AdminLogin from "./Admin Login/AdminLogin"; // Example, create this if not present
-import AboutUs from "./About Us/AboutUs"; // Example, create this if not present
+import Homepage from "./Homepage/Homepage";
+import AdminLogin from "./Admin Login/AdminLogin";
+import AboutUs from "./About Us/AboutUs";
 import Booking from "./Book Now/Booking";
 import Appointment from "./Admin/Appointment";
-import Dashboard from "./Admin/Dashboard"; // Example, create this if not present
-import Inquiry from "./Admin/Inquiry"; // Example, create this if not present
+import Dashboard from "./Admin/Dashboard";
+import Inquiry from "./Admin/Inquiry";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -21,10 +22,31 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/booking" element={<Booking />} />
-        <Route path="/admin/appointment" element={<Appointment />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        {/* Add more routes as needed */}
-        <Route path="/admin/inquiry" element={<Inquiry />} />
+
+        <Route
+          path="/admin/appointment"
+          element={
+            <ProtectedRoute>
+              <Appointment />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/inquiry"
+          element={
+            <ProtectedRoute>
+              <Inquiry />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );
