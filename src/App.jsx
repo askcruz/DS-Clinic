@@ -11,8 +11,6 @@ import Appointment from "./Admin/Appointment";
 import Dashboard from "./Admin/Dashboard";
 import Inquiry from "./Admin/Inquiry";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Dashboard from "./Admin/Dashboard"; // Example, create this if not present
-import Inquiry from "./Admin/Inquiry"; // Example, create this if not present
 import Profile from "./Admin/Profile"; // Example, create this if not present
 
 function App() {
