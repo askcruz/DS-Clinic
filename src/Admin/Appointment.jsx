@@ -120,7 +120,8 @@ function Appointment() {
                     </div>
                     <button onClick={() => setShowNewForm(true)}>+ New Appointment</button>
                 </div>
-                <table className={styles["appointment-table"]}>
+                <div className={styles["table-responsive"]}>
+                  <table className={styles["appointment-table"]}>
                     <thead>
                         <tr>
                             <th>
@@ -188,6 +189,7 @@ function Appointment() {
                         ))}
                     </tbody>
                 </table>
+                </div>
                 {showNewForm && (
                     <div className={styles["modal"]}>
                         <NewAppointmentForm
