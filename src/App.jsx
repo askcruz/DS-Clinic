@@ -11,6 +11,9 @@ import Appointment from "./Admin/Appointment";
 import Dashboard from "./Admin/Dashboard";
 import Inquiry from "./Admin/Inquiry";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Dashboard from "./Admin/Dashboard"; // Example, create this if not present
+import Inquiry from "./Admin/Inquiry"; // Example, create this if not present
+import Profile from "./Admin/Profile"; // Example, create this if not present
 
 function App() {
   return (
@@ -47,6 +50,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="/admin/appointment" element={<Appointment />} />
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        {/* Add more routes as needed */}
+        <Route path="/admin/inquiry" element={<Inquiry />} />
+        <Route path="/admin/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
