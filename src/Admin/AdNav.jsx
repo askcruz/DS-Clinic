@@ -16,11 +16,16 @@ const AdNav = () => {
             navigate('/admin/appointment');
         } else if (item === 'Inquiry') {
             navigate('/admin/inquiry');
-        } else if (item === 'Profile') { //added this for 
+        } else if (item === 'Profile') {
             navigate('/admin/profile'); 
         } else {
             console.log(`Navigating to: ${item}`);
         }
+    };
+
+    const handleLogout = () => {
+        // Navigate back to admin login
+        navigate('/adminlogin');
     };
 
     return (
@@ -40,6 +45,12 @@ const AdNav = () => {
                                 {item}
                             </button>
                         ))}
+                        <button
+                            onClick={handleLogout}
+                            className={`${styles["admin-navbar-item"]} ${styles["logout-btn"]}`}
+                        >
+                            Logout
+                        </button>
                     </div>
                 </div>
             </div>

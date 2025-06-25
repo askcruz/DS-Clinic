@@ -99,15 +99,20 @@ function Inquiry() {
 
   const updateInquiryStatus = async (id, newStatus) => {
     try {
-      const { error } = await supabase
+      console.log(`Updating inquiry ${id} status to ${newStatus}`);
+      
+      const { data, error } = await supabase
         .from("inquiry_entries")
         .update({ status: newStatus })
-        .eq("id", id);
+        .eq("id", id)
+        .select(); // Add select to get the updated data back
 
       if (error) {
         console.error("Supabase error:", error);
         throw error;
       }
+
+      console.log("Updated data from Supabase:", data);
 
       // Update local state
       setInquiries((prev) =>
@@ -122,9 +127,11 @@ function Inquiry() {
       }
 
       console.log(`Inquiry ${id} status updated to ${newStatus}`);
+      return true;
     } catch (error) {
       console.error("Error updating status:", error);
       alert("Failed to update status. Please try again.");
+      return false;
     }
   };
 
@@ -213,40 +220,20 @@ function Inquiry() {
     }
   };
 
-  const viewInquiry = async (inquiry) => {
-    setSelectedInquiry(inquiry);
-    setShowModal(true);
 
+
+  const viewInquiry = async (inquiry) => {
     // Mark as read if it's unread and not archived
     if (inquiry.status === "unread" && !inquiry.is_archived) {
-      try {
-        const { error } = await supabase
-          .from("inquiry_entries")
-          .update({ status: "read" })
-          .eq("id", inquiry.id);
-
-        if (error) {
-          console.error("Error marking as read:", error);
-          return;
-        }
-
-        // Update local state for both inquiries and the selected inquiry
-        setInquiries((prev) =>
-          prev.map((inq) =>
-            inq.id === inquiry.id ? { ...inq, status: "read" } : inq
-          )
-        );
-
-        // Update the selected inquiry as well
-        setSelectedInquiry((prev) =>
-          prev ? { ...prev, status: "read" } : prev
-        );
-
-        console.log("Inquiry marked as read successfully");
-      } catch (error) {
-        console.error("Error updating inquiry status:", error);
+      const success = await updateInquiryStatus(inquiry.id, "read");
+      if (!success) {
+        console.error("Failed to update status, but showing modal anyway");
       }
     }
+
+    // Set the selected inquiry and show modal
+    setSelectedInquiry(inquiry);
+    setShowModal(true);
   };
 
   const closeModal = () => {
@@ -429,14 +416,14 @@ function Inquiry() {
                           onClick={() => restoreInquiry(inquiry.id)}
                           title="Restore to inbox"
                         >
-                          ↩️ Restore
+                          Restore
                         </button>
                         <button
                           className={styles["action-btn-danger"]}
                           onClick={() => permanentlyDelete(inquiry.id)}
                           title="Delete permanently"
                         >
-                          🗑️ Delete
+                          Delete
                         </button>
                       </>
                     ) : (
