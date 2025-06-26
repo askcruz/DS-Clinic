@@ -24,7 +24,6 @@ const AdminLogin = () => {
       setPassword("");
       console.error("Login error:", error.message);
 
-      // Revert placeholder back to normal after 2 seconds
       setTimeout(() => {
         setLoginFailed(false);
       }, 2000);
