@@ -12,10 +12,12 @@ import Dashboard from "./Admin/Dashboard";
 import Inquiry from "./Admin/Inquiry";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./Admin/Profile"; // Example, create this if not present
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/services" element={<Services />} />
