@@ -28,8 +28,6 @@ function Booking() {
             validId: form.hmoId?.value || "",
             occupation: form.occupation?.value || "",
             hmoProvider: form.hmoProvider?.value || "",
-            insuranceId: form.insuranceId?.value || "",
-            validIdType: form.validIdType?.value || "",
             status: "Pending"
         };
 
