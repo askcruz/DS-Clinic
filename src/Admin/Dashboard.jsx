@@ -89,7 +89,29 @@ function Dashboard() {
       }
     };
 
-    fetchUpcomingAppointments();
+    const fetchMissedAppointments = async () => {
+      try {
+        const { data: bookings, error } = await supabase
+          .from("booking")
+          .select("");
+
+        if (error) throw error;
+
+        const now = new Date();
+
+        const missed = bookings.filter((b) => {
+          if (b.status !== "Pending") return false;
+          const apptDateTime = new Date(`${b.date}T${b.time}`);
+          return apptDateTime < now;
+        });
+
+        setMissedAppointments(missed);
+      } catch (err) {
+        console.error("Error", err);
+      }
+    };
+
+    fetchMissedAppointments();
   }, []);
 
   // lastupdated/edited counter
@@ -171,6 +193,26 @@ function Dashboard() {
             </ul>
           )}
         </div>
+      </div>
+
+      <div className={styles["missed-section"]}>
+        <h2>Overdue / Missed Appointments </h2>
+        <h3>
+          Appointments that are still pending that has not been check past the
+          date will appear here
+        </h3>
+        {missedAppointments.length === 0 ? (
+          <p>No missed appointments.</p>
+        ) : (
+          <ul>
+            {missedAppointments.map((appt, i) => (
+              <li key={i}>
+                <strong>{appt.name}</strong> – {appt.date} – {appt.time} –{" "}
+                {appt.service}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className={styles["appointment-content"]}>
