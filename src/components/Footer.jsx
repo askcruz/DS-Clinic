@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
     const navigationItems = [
         { name: "Home", path: "/" },
-        { name: "About", path: "/about" }, //change this
-        { name: "Book Now", path: "/booking" }, //change this
+        { name: "About", path: "/aboutus" },
+        { name: "Book Now", path: "/booking" },
         { name: "Services", path: "/services" },
         { name: "Contacts", path: "/contact" }
     ];
