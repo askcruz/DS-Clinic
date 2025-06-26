@@ -14,8 +14,8 @@ const AdminLogin = () => {
     setLoginFailed(false);
 
     const { data, error } = await supabase.auth.signInWithPassword({
-      email: username,
-      password: password,
+      email: "admin@gmail.com",
+      password: "admin123",
     });
 
     if (error) {

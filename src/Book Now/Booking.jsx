@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import styles from './Booking.module.css'; // Import CSS module
 import '../components/Footer.css';
 import '../components/Navbar.css';
+import { createBooking } from '../bookingApi';
 
 function Booking() {
     const [isHmo, setIsHmo] = React.useState(false);
@@ -12,7 +13,7 @@ function Booking() {
         setIsHmo(e.target.value === "yes");
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
         const bookingData = {
@@ -27,17 +28,21 @@ function Booking() {
             validId: form.hmoId?.value || "",
             occupation: form.occupation?.value || "",
             hmoProvider: form.hmoProvider?.value || "",
-            insuranceId: form.insuranceId?.value || "",
-            validIdType: form.validIdType?.value || "",
             status: "Pending"
         };
 
-        const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-        bookings.push(bookingData);
-        localStorage.setItem("bookings", JSON.stringify(bookings));
-        alert("Booking submitted!");
-        form.reset();
-        setIsHmo(false); // reset HMO state
+        try {
+                const { data, error } = await createBooking(bookingData);
+                if (error) throw error;
+                alert("Booking submitted successfully!");
+                form.reset();
+                setIsHmo(false);
+                } catch (error) {
+                console.error("Error submitting booking:", error);
+                alert("Failed to submit booking. Please try again.");
+                form.reset();
+                setIsHmo(false); // reset HMO state
+            }
     };
 
     return (
