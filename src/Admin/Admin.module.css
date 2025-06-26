@@ -784,8 +784,11 @@ input[type="checkbox"] {
 /* Profile Page */
 
 .profile-container {
-  min-height: 100vh;
-  background: #f8fafc;
+  margin-left: 13vw;
+  padding: 2rem;
+  width: calc(100% - 13vw);
+  box-sizing: border-box;
+  min-height: 3vh;
 }
 
 .profile-section {
@@ -793,32 +796,38 @@ input[type="checkbox"] {
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  font-size: 1.5rem;
 }
 
 .profile-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  background: #d6d0d0;
+  border-radius: 15px;
+  box-shadow: 0 26px 26px rgba(45, 13, 228, 0.08);
   padding: 2rem 3rem;
   display: flex;
   align-items: center;
   gap: 2rem;
   margin-top: 2rem;
-  min-width: 350px;
+  min-width: 50vw;
+  min-height: 60vh;
 }
 
 .profile-avatar {
-  width: 120px;
-  height: 120px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #0c2d48;
+  margin-left: 6.5rem;
 }
 
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.2rem;         /* increased spacing between items */
+  font-size: 2rem;     /* larger text */
+  line-height: 1.5;    /* more readable */
+  margin-left: 3.5rem;
 }
 
 .profile-edit-btn {
@@ -831,7 +840,9 @@ input[type="checkbox"] {
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
+  width: 9rem;
 }
+
 .profile-edit-btn:hover {
   background: #145da0;
 }
