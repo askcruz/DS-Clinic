@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b8fc6f60.css",
+    "main.js": "/static/js/main.1761a03a.js",
+    "static/js/453.fdb203d9.chunk.js": "/static/js/453.fdb203d9.chunk.js",
+    "static/media/booking-bg.svg": "/static/media/booking-bg.f08ffbc66046ab89247b.svg",
+    "static/media/dsLogo.svg": "/static/media/dsLogo.9e193cef87a0476949801a9fe4ab35a2.svg",
+    "static/media/valuecare.svg": "/static/media/valuecare.5456133bcbfaec35082cf33e150361a0.svg",
+    "static/media/inlife.svg": "/static/media/inlife.33447333013409200cd643082e76a06c.svg",
+    "static/media/aboutus-bg.svg": "/static/media/aboutus-bg.6ead9eaa3f274d0affe8.svg",
+    "static/media/cocolife.svg": "/static/media/cocolife.aac78d42bed7dc98c5748026f7902748.svg",
+    "static/media/icare.svg": "/static/media/icare.d02ceaee78d5ef85194eac9f842f0ed4.svg",
+    "static/media/etiqua.svg": "/static/media/etiqua.923d5e5c2560770506bd0cea90d62cec.svg",
+    "index.html": "/index.html",
+    "main.b8fc6f60.css.map": "/static/css/main.b8fc6f60.css.map",
+    "main.1761a03a.js.map": "/static/js/main.1761a03a.js.map",
+    "453.fdb203d9.chunk.js.map": "/static/js/453.fdb203d9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8fc6f60.css",
+    "static/js/main.1761a03a.js"
+  ]
+}
