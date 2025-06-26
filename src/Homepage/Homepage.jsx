@@ -71,7 +71,7 @@ const Homepage = () => {
               accommodate your needs with utmost care. Your comfort and health
               comes first!
             </div>
-            <Button onClick={() => alert("Clicked!")}>Learn More</Button>
+            <Button onClick={() => navigate('/aboutus')}>Learn More</Button>
           </div>
         </div>
       </div>
