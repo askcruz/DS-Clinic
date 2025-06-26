@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const useScrollAnimation = () => {
   const ref = useRef(null);
@@ -140,6 +141,8 @@ const Services = () => {
     }
   ];
 
+  const navigate = useNavigate();
+
   const handleServiceClick = (serviceName) => {
     console.log(`Clicked on: ${serviceName}`);
     // navigate to book now
@@ -161,7 +164,12 @@ const Services = () => {
           className={`${styles['book-container']} ${isBookVisible ? styles.animate : ''}`}
           ref={bookRef}
         >
-          <Button className={styles['book-btn']}>Book a service now!</Button>
+          <Button
+            className={styles['book-btn']}
+            onClick={() => navigate('/booking')}
+          >
+            Book a service now!
+          </Button>
         </div>
 
         <div 
