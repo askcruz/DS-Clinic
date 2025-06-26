@@ -103,7 +103,7 @@ const Homepage = () => {
         >
           <div className={styles.Heading}>Connect with us! </div>
           <Button className={styles["contacts-btn"]} onClick={() => navigate("/contact")}>Reach out to us</Button>
-          <Button className={styles["apts-btn"]} onClick={() => alert("Clicked!")}>Book an appointment</Button>
+          <Button className={styles["apts-btn"]} onClick={() => navigate("/booking")}>Book an appointment</Button>
         </div>
       </div>
 
