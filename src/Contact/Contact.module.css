@@ -234,6 +234,12 @@
   height: 87px;
 }
 
+.inquiry-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Adjust spacing as needed */
+}
+
 .section2 .name,
 .section2 .email,
 .section2 .message {
