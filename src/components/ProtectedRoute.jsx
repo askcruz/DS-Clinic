@@ -10,10 +10,13 @@ const ProtectedRoute = ({ children }) => {
     const checkSession = async () => {
       const {
         data: { session },
+        error,
       } = await supabase.auth.getSession();
 
+      console.log("Supabase session:", session);
+      console.log("Supabase error (if any):", error);
+
       if (session && session.user.email === "admin@gmail.com") {
-        //remove the admin@gmail.com if we are not sticking with one email
         setAuthenticated(true);
       } else {
         setAuthenticated(false);
