@@ -89,6 +89,8 @@ function Dashboard() {
       }
     };
 
+    fetchUpcomingAppointments();
+
     const fetchMissedAppointments = async () => {
       try {
         const { data: bookings, error } = await supabase

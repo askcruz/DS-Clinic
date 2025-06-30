@@ -12,7 +12,7 @@ import Dashboard from "./Admin/Dashboard";
 import Inquiry from "./Admin/Inquiry";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./Admin/Profile"; // Example, create this if not present
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/booking" element={<Booking />} />
-        
+
         <Route
           path="/admin/appointment"
           element={
@@ -50,10 +50,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/admin/appointment" element={<Appointment />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
-        {/* Add more routes as needed */}
-        <Route path="/admin/inquiry" element={<Inquiry />} />
         <Route path="/admin/profile" element={<Profile />} />
       </Routes>
     </Router>
