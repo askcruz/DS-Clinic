@@ -1,7 +1,7 @@
 .hero-section-booking {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,6 +9,8 @@
     color: #fff;
     text-align: center;
     background: url('../Assets/booking-bg.svg') center center/cover no-repeat;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .hero-section-booking h1,
@@ -20,20 +22,19 @@
 }
 
 .hero-section-booking h1 {
-    font-size: 6.5vw; /* was 10rem */
+    font-size: clamp(2.5rem, 6vw + 1rem, 5rem);
     font-family: "Garamond", sans-serif;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    
 }
 
 .hero-section-booking p {
-    font-size: 2vw; /* was 3rem */
+    font-size: clamp(1.25rem, 3vw + 0.5rem, 2rem);
     font-family: "Garamond", sans-serif;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
-/*Booking form*/
+/* Booking form */
 
 .booking-form {
     display: flex;
@@ -41,10 +42,9 @@
     align-items: center;
     justify-content: center;
     background: #EAD7D1;
-    padding: 3rem 1vw; /* was 4rem 2rem */
-    gap: 3rem;         /* was 6rem */
+    padding: 3rem 1rem;
+    gap: 3rem;
     width: 100%;
-    min-height: 100vh;
     box-sizing: border-box;
 }
 
@@ -54,48 +54,55 @@
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    padding: 2rem 1vw; /* was 3rem 2rem */
-    gap: 2rem;         /* was 4rem */
-    max-width: 90vw;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    max-width: 1300px;
     width: 100%;
     min-height: 90vh;
     box-sizing: border-box;
-    border-radius: 1.8%;
+    border-radius: 12px;
+    margin: auto;
 }
 
 .bookingform-container label {
-    font-size: 1.5rem; /* was 2.3rem */
+    font-size: 1.25rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
 
-.booking{
+.booking {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1vw; /* was 4rem 2rem */
-    gap: 2rem;         /* was 4rem */
+    padding: 2rem 1rem;
+    gap: 2rem;
+    width: 100%;
 }
 
 .form-row {
     display: flex;
-    gap: 1.9rem;         /* was 3.5rem */
+    gap: 1.5rem;
     width: 100%;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
 }
 
 .form-row input,
 .form-row select {
-    font-size: 2rem; /* was 2.4rem */
+    font-size: 1.25rem;
     flex: 1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
 .form-row label {
-    width: 6rem;       /* was 150px */
+    width: 6rem;
     text-align: left;
-    margin-right: 1.2rem;
-    font-size: 1.2rem; /* was 2.1rem */
+    margin-right: 1rem;
+    font-size: 1rem;
 }
 
 .hmo-row {
@@ -113,14 +120,15 @@
 }
 
 .form-row-hmo label p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
 
 .form-row-hmo input {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     flex: 1;
+    padding: 0.6rem;
 }
 
 .form-row-id {
@@ -128,17 +136,19 @@
     gap: 1rem;
     width: 100%;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 .form-row-id label {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
 
-.form-row-id input{
-    font-size: 1.4rem;
+.form-row-id input {
+    font-size: 1.2rem;
     flex: 1;
+    padding: 0.6rem;
 }
 
 .submit-row {
@@ -147,24 +157,29 @@
 }
 
 .submit-button {
-    padding: 1rem 3rem; /* was 2rem 6rem */
+    padding: 0.8rem 2rem;
     background-color: #144e75;
     color: white;
-    font-size: 1.2rem;  /* was 1.8rem */
+    font-size: 1.1rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Georgia', serif;
+    transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0f3b5a;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .hero-section-booking h1 {
-        font-size: 8rem;
+        font-size: clamp(2rem, 8vw, 3.5rem);
     }
 
     .hero-section-booking p {
-        font-size: 2.5rem;
+        font-size: clamp(1rem, 4vw, 1.75rem);
     }
 
     .booking-form {
@@ -177,12 +192,21 @@
 
     .form-row {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+
+    .form-row label {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 
     .form-row input,
     .form-row select {
         width: 100%;
+    }
+
+    .form-row-id {
+        flex-direction: column;
     }
 }
 
