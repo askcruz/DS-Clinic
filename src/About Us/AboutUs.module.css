@@ -43,16 +43,18 @@
     align-items: center;
     justify-content: center;
     background: #0C2D48;
-    padding: 4rem 2rem;
-    gap: 4rem;
+    padding: 4rem 2vw;
+    gap: 5vw;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
 .dentist-image-svg {
-    width: 50rem;
+    width: 35vw;
+    max-width: 35rem;
+    min-width: 18rem;
     height: auto;
     object-fit: cover;
     border-radius: 16px;
@@ -61,20 +63,22 @@
 }
 
 .vision-text {
-    max-width: 800px;
+    max-width: 50vw;
+    min-width: 18rem;
     text-align: center;
     color: #fff;
     font-family: "Garamond", sans-serif;
+    font-size: 1.5rem;
 }
 
 .vision-text h2 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
 }
 
 .vision-text p {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.6;
 }
 
@@ -84,16 +88,18 @@
     align-items: center;
     justify-content: center;
     background: #FFFF;
-    padding: 4rem 2rem;
-    gap: 4rem;
+    padding: 4rem 2vw;
+    gap: 4vw;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
 .patient-image-svg {
-    width: 50rem;
+    width: 35vw;
+    max-width: 35rem;
+    min-width: 18rem;
     height: auto;
     object-fit: cover;
     border-radius: 16px;
@@ -102,20 +108,22 @@
 }
 
 .mission-text {
-    max-width: 800px;
+    max-width: 50vw;
+    min-width: 18rem;
     text-align: center;
     color: #050404;
     font-family: "Garamond", sans-serif;
+    font-size: 1.5rem;
 }
 
 .mission-text h2 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
     letter-spacing: 2px;
 }
 
 .mission-text p {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.6;
 }
 
@@ -127,26 +135,27 @@
     align-items: center;
     justify-content: center;
     background: #0C2D48;
-    padding: 4rem 2rem;
-    gap: 4rem;
+    padding: 4rem 2vw;
+    gap: 4vw;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
 .about-hmo-section img {
     margin: 1rem;
-    height: 180px;
+    height: 9vw;
+    max-height: 10.25rem;
+    min-height: 6rem;
     object-fit: contain;
     padding-top: 2rem;
 }
 
 .about-hmo-section h2 {
-    border-top: 5rem;
+    font-size: 3.5rem;
     margin-top: 2rem;
     font-family: "Garamond", sans-serif;
-    font-size: 5rem;
     color: #ffffff;
 }
 

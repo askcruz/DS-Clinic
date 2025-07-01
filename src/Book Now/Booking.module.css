@@ -1,5 +1,3 @@
-
-
 .hero-section-booking {
     position: relative;
     width: 100%;
@@ -22,7 +20,7 @@
 }
 
 .hero-section-booking h1 {
-    font-size: 10rem;
+    font-size: 6.5vw; /* was 10rem */
     font-family: "Garamond", sans-serif;
     margin-bottom: 0.3rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
@@ -30,7 +28,7 @@
 }
 
 .hero-section-booking p {
-    font-size: 3rem;
+    font-size: 2vw; /* was 3rem */
     font-family: "Garamond", sans-serif;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
@@ -43,8 +41,8 @@
     align-items: center;
     justify-content: center;
     background: #EAD7D1;
-    padding: 4rem 2rem;
-    gap: 6rem;
+    padding: 3rem 1vw; /* was 4rem 2rem */
+    gap: 3rem;         /* was 6rem */
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
@@ -55,17 +53,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #FBF7F6;
-    padding: 3rem 2rem;
-    gap: 4rem;
+    background: #ffffff;
+    padding: 2rem 1vw; /* was 3rem 2rem */
+    gap: 2rem;         /* was 4rem */
+    max-width: 90vw;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     box-sizing: border-box;
     border-radius: 1.8%;
 }
 
 .bookingform-container label {
-    font-size: 2.3rem;
+    font-size: 1.5rem; /* was 2.3rem */
     font-family: 'Georgia', serif;
     color: #333;
 }
@@ -75,28 +74,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem 2rem;
-    gap: 4rem;
+    padding: 2rem 1vw; /* was 4rem 2rem */
+    gap: 2rem;         /* was 4rem */
 }
 
 .form-row {
     display: flex;
-    gap: 3.5rem;
+    gap: 1.9rem;         /* was 3.5rem */
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .form-row input,
 .form-row select {
-    font-size: 2.4rem;
+    font-size: 2rem; /* was 2.4rem */
     flex: 1;
 }
 
 .form-row label {
-    width: 150px; 
+    width: 6rem;       /* was 150px */
     text-align: left;
     margin-right: 1.2rem;
-    font-size: 2.1rem; 
+    font-size: 1.2rem; /* was 2.1rem */
 }
 
 .hmo-row {
@@ -114,31 +113,31 @@
 }
 
 .form-row-hmo label p {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
 
 .form-row-hmo input {
-    font-size: 2.4rem;
+    font-size: 1.5rem;
     flex: 1;
 }
 
 .form-row-id {
     display: flex;
-    gap: 3.5rem;
+    gap: 1rem;
     width: 100%;
     margin-bottom: 2rem;
 }
 
 .form-row-id label {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
 
 .form-row-id input{
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     flex: 1;
 }
 
@@ -148,10 +147,10 @@
 }
 
 .submit-button {
-    padding: 2rem 6rem;
+    padding: 1rem 3rem; /* was 2rem 6rem */
     background-color: #144e75;
     color: white;
-    font-size: 1.8rem;
+    font-size: 1.2rem;  /* was 1.8rem */
     border: none;
     border-radius: 10px;
     cursor: pointer;
