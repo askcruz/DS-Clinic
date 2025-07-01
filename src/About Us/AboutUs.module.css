@@ -179,6 +179,44 @@
     }
 }
 
+@media (min-width: 2560px) {
+  .about-hero-section h1 {
+    font-size: 13rem;
+  }
+
+  .about-hero-section p {
+    font-size: 3.5rem;
+  }
+
+  .dentist-image-svg,
+  .patient-image-svg {
+      width: 50rem;
+      max-width: 100%;
+    }
+
+  .vision-text p,
+  .mission-text p {
+      max-width: 90rem;
+      font-size: 3rem;
+    }
+
+  .vision-text h2,
+  .mission-text h2 {
+      max-width: 90rem;
+      font-size: 6rem;
+    }
+  .about-hmo-section img {
+        height: 15rem;
+    }
+
+    .about-hmo-section h2 {
+        text-align: center;
+        font-size: 5.5rem;
+    }
+  
+}
+
+
 /* Animations */
 
 @keyframes fadeInHero {

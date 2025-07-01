@@ -54,18 +54,18 @@
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    padding: 2rem 1rem;
+    padding: 3rem 1.5rem;
     gap: 2rem;
-    max-width: 1300px;
+    max-width: 1600px;
     width: 100%;
-    min-height: 90vh;
+    min-height: 50vh;
     box-sizing: border-box;
     border-radius: 12px;
     margin: auto;
 }
 
 .bookingform-container label {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-family: 'Georgia', serif;
     color: #333;
 }
@@ -75,8 +75,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
-    gap: 2rem;
+    padding: 2.5rem 2rem;
+    gap: 3rem;
     width: 100%;
 }
 
@@ -92,7 +92,7 @@
 .form-row select {
     font-size: 1.25rem;
     flex: 1;
-    padding: 0.75rem;
+    padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -101,8 +101,9 @@
 .form-row label {
     width: 6rem;
     text-align: left;
-    margin-right: 1rem;
-    font-size: 1rem;
+    margin-right: 0.87rem;
+    margin-top: 0.90rem;
+    font-size: 1.45rem;
 }
 
 .hmo-row {
@@ -126,7 +127,7 @@
 }
 
 .form-row-hmo input {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     flex: 1;
     padding: 0.6rem;
 }
@@ -140,8 +141,9 @@
 }
 
 .form-row-id label {
-    font-size: 1.1rem;
+    font-size: 1.45rem;
     font-family: 'Georgia', serif;
+    margin-top: 0.55rem;
     color: #333;
 }
 
@@ -157,10 +159,10 @@
 }
 
 .submit-button {
-    padding: 0.8rem 2rem;
+    padding: 0.9rem 2rem;
     background-color: #144e75;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -209,6 +211,28 @@
         flex-direction: column;
     }
 }
+
+@media (min-width: 2560px) {
+  .hero-section-booking h1 {
+    font-size: 13rem;
+  }
+
+  .hero-section-booking p {
+    font-size: 3.5rem;
+  }
+
+  .bookingform-container {
+    max-width: 1750px;
+    padding: 4rem 3rem;
+  }
+
+  .submit-button {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+  }
+}
+
+
 
 /* Animation for hero section */
 @keyframes fadeInHero {
