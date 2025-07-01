@@ -56,11 +56,7 @@ const Homepage = () => {
           ref={aboutUsRef}
         >
           <div className={styles["frame-1"]}>
-            <img className={styles.storefront} src="storefront.jpg" />
-            <img className={styles.headshot} src="headshot.jpg" />
-            <img className={styles.seatcloseup} src="seatcloseup.jpg" />
-            <img className={styles.seatbehind3} src="seatbehind3.jpg" />
-            <img className={styles.frontdesk} src="frontdesk.jpg" />
+            <img className={styles.frame1pic} src="frame1pic.png" />
           </div>
           <div className={styles["frame-2"]}>
             <div className={styles.Heading}>

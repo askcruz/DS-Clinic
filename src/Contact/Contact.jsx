@@ -81,7 +81,7 @@ const Contact = () => {
       }
 
       // Fixed: Removed the unreachable code after the return statement
-      const {error} = await supabase.from("inquiry_entries").insert([
+      const { error } = await supabase.from("inquiry_entries").insert([
         {
           name: formData.name,
           email: formData.email,
@@ -123,7 +123,7 @@ const Contact = () => {
         className={`${styles.hero} ${isHeroVisible ? styles.animate : ""}`}
         ref={heroRef}
       >
-        <img className={styles.seatwide} src="seatwide.jpg" alt=""/>
+        <img className={styles.seatwide} src="seatwide.jpg" alt="" />
         <div className={styles.heading}>Contact Us </div>
         <div className={styles.subheading}>
           Reach out to our various platforms to <br />
@@ -136,19 +136,18 @@ const Contact = () => {
           className={`${styles.maps} ${isMapsVisible ? styles.animate : ""}`}
           ref={mapsRef}
         >
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.212733773944!2d121.0568567!3d14.5298208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a485e00195%3A0xad1057249262fb95!2sDLORAH%20DENTAL%20AND%20ORTHODONTIC%20CLINIC!5e0!3m2!1sen!2sph!4v1747933906188!5m2!1sen!2sph"
-            title="Map of Dlorah Dental and Orthodontic Clinic"
-            width="747"
-            height="562"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div className={styles["iframe-wrapper"]}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.212733773944!2d121.0568567!3d14.5298208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a485e00195%3A0xad1057249262fb95!2sDLORAH%20DENTAL%20AND%20ORTHODONTIC%20CLINIC!5e0!3m2!1sen!2sph!4v1747933906188!5m2!1sen!2sph"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
           <div className={styles["maps-text"]}>
             <div className={styles.header}>
-              <img className={styles.logo2white} src="/logos/logo2white.png" alt="DS Clinic Logo"/>
+              <img className={styles.logo2white} src="/logos/logo2white.png" alt="DS Clinic Logo" />
               <div className={styles.heading}>DS Clinic </div>
               <div className={styles.subheading}>
                 by Dr. Dlorah Shaneen C. Quiño{" "}
@@ -165,14 +164,13 @@ const Contact = () => {
 
       <div className={styles.section2}>
         <div
-          className={`${styles["contact-body"]} ${
-            isContactVisible ? styles.animate : ""
-          }`}
+          className={`${styles["contact-body"]} ${isContactVisible ? styles.animate : ""
+            }`}
           ref={contactRef}
         >
           <div className={styles["reach-out"]}>Reach out! </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.phone} src="/icons/phone.png" alt="Phone logo"/>
+            <img className={styles.phone} src="/icons/phone.png" alt="Phone logo" />
             <div className={styles["phone-caption"]}>
               Phone:
               <br />
@@ -180,7 +178,7 @@ const Contact = () => {
             </div>
           </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.whatsapp} src="/icons/whatsapp.png" alt ="Whatsapp Logo" />
+            <img className={styles.whatsapp} src="/icons/whatsapp.png" alt="Whatsapp Logo" />
             <div className={styles["whatsapp-caption"]}>
               WhatsApp:
               <br />
@@ -188,7 +186,7 @@ const Contact = () => {
             </div>
           </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.viber} src="/icons/viber.png" alt="Viber Logo"/>
+            <img className={styles.viber} src="/icons/viber.png" alt="Viber Logo" />
             <div className={styles["viber-caption"]}>
               Viber:
               <br />
@@ -244,7 +242,7 @@ const Contact = () => {
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit"}
-              
+
             </Button>
           </form>
         </div>
