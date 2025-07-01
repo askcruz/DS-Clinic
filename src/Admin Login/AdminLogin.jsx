@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import styles from "./AdminLogin.module.css";
 import Button from "../components/Button";
+import Storefront from "../Assets/admin/storefront.jpg"; 
+import Logo2Black from "../Assets/logos/logo2black.png";
 
 const AdminLogin = () => {
   const [username, setUsername] = useState(""); // email
@@ -34,12 +36,12 @@ const AdminLogin = () => {
 
   return (
     <div className={styles["admin-login-page"]}>
-      <img className={styles.front} src="storefront.jpg" alt="" />
+      <img className={styles.front} src={Storefront} alt="Storefront" />
       <div className={styles.login}>
         <div className={styles.logo}>
           <img
             className={styles.logo2}
-            src="/logos/logo2black.png"
+            src={Logo2Black}
             alt="DS Clinic Logo"
           />
           <div className={styles["ds-clinic"]}>DS Clinic</div>

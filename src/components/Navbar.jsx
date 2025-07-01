@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Logo2Black from '../Assets/logos/logo2black.png';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -39,7 +40,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <img src="/logos/logo2black.png" alt="DS Clinic Logo" className="logo2black" />
+            <img src={Logo2Black} alt="DS Clinic Logo" className="logo2black" />
           </div>
           <div className="navbar-items">
             {navItems.map((item, index) => (

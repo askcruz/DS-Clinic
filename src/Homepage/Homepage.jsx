@@ -2,6 +2,9 @@ import styles from "./Homepage.module.css";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import ClinicLogo from "../Assets/logos/Clinic.png";
+import Frame1 from "../Assets/homeimg/frame1pic.png";
+import Smile from "../Assets/homeimg/smile.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
@@ -47,7 +50,7 @@ const Homepage = () => {
       <Navbar />
 
       <div className={styles.hero}>
-        <img className={styles.logo} src="/logos/Clinic.png" />
+        <img className={styles.logo} src={ClinicLogo} alt="Clinic Logo" />
       </div>
 
       <div className={styles.section1}>
@@ -56,7 +59,7 @@ const Homepage = () => {
           ref={aboutUsRef}
         >
           <div className={styles["frame-1"]}>
-            <img className={styles.frame1pic} src="frame1pic.png" />
+            <img className={styles.frame1pic} src={Frame1} alt="Frame 1" />
           </div>
           <div className={styles["frame-2"]}>
             <div className={styles.Heading}>
@@ -88,7 +91,7 @@ const Homepage = () => {
             </div>
             <Button onClick={() => navigate("/services")}>Learn More</Button>
           </div>
-          <img className={styles.smile} src="smile.jpg" />
+          <img className={styles.smile} src={Smile} alt="smile" />
         </div>
       </div>
 

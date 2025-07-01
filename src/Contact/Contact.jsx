@@ -2,6 +2,12 @@ import styles from "./Contact.module.css";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Seatwide from "../Assets/contactimg/seatwide.jpg";
+import Logo2White from "../Assets/logos/logo2white.png";
+import Phone from "../Assets/contactimg/icons/phone.png";
+import Whatsapp from "../Assets/contactimg/icons/whatsapp.png";
+import Viber from "../Assets/contactimg/icons/viber.png";
+import FBBlack from "../Assets/contactimg/icons/fbblack.png";
 import { useEffect, useRef, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
@@ -24,7 +30,7 @@ const useScrollAnimation = () => {
       },
       {
         threshold: 0.3,
-        rootMargin: '0px 0px -50px 0px' //previously naka "" sila HHADWAUDHA PA CHECK NALANG
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
@@ -123,7 +129,7 @@ const Contact = () => {
         className={`${styles.hero} ${isHeroVisible ? styles.animate : ""}`}
         ref={heroRef}
       >
-        <img className={styles.seatwide} src="seatwide.jpg" alt="" />
+        <img className={styles.seatwide} src={Seatwide} alt="seatwide" />
         <div className={styles.heading}>Contact Us </div>
         <div className={styles.subheading}>
           Reach out to our various platforms to <br />
@@ -147,7 +153,7 @@ const Contact = () => {
           </div>
           <div className={styles["maps-text"]}>
             <div className={styles.header}>
-              <img className={styles.logo2white} src="/logos/logo2white.png" alt="DS Clinic Logo" />
+              <img className={styles.logo2white} src={Logo2White} alt="Clinic Logo(white)" />
               <div className={styles.heading}>DS Clinic </div>
               <div className={styles.subheading}>
                 by Dr. Dlorah Shaneen C. Quiño{" "}
@@ -170,7 +176,7 @@ const Contact = () => {
         >
           <div className={styles["reach-out"]}>Reach out! </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.phone} src="/icons/phone.png" alt="Phone logo" />
+            <img className={styles.phone} src={Phone} alt="Phone logo" />
             <div className={styles["phone-caption"]}>
               Phone:
               <br />
@@ -178,7 +184,7 @@ const Contact = () => {
             </div>
           </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.whatsapp} src="/icons/whatsapp.png" alt="Whatsapp Logo" />
+            <img className={styles.whatsapp} src={Whatsapp} alt="Whatsapp Logo" />
             <div className={styles["whatsapp-caption"]}>
               WhatsApp:
               <br />
@@ -186,7 +192,7 @@ const Contact = () => {
             </div>
           </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.viber} src="/icons/viber.png" alt="Viber Logo" />
+            <img className={styles.viber} src={Viber} alt="Viber Logo" />
             <div className={styles["viber-caption"]}>
               Viber:
               <br />
@@ -194,7 +200,7 @@ const Contact = () => {
             </div>
           </div>
           <div className={styles["contact-row"]}>
-            <img className={styles.facebook} src="/icons/fbblack.png" alt="Facebook Logo" />
+            <img className={styles.facebook} src={FBBlack} alt="Facebook Logo" />
             <div className={styles["facebook-caption"]}>
               Facebook:
               <br />
