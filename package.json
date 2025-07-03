@@ -1,5 +1,6 @@
 {
   "name": "dsclinic",
+  "homepage": "https://askcruz.github.io/DS-Clinic",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
