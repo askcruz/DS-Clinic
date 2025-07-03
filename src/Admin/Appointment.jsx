@@ -12,6 +12,7 @@ function Appointment() {
     const [loading, setLoading] = useState(true);
     const [selectedRows, setSelectedRows] = React.useState([]);
     const [editingRows, setEditingRows] = React.useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
     const [showNewForm, setShowNewForm] = React.useState(false);
 
     useEffect(() => {
@@ -106,8 +107,13 @@ function Appointment() {
     } catch (error) {
         console.error('Error updating booking:', error);
     }
+
 };
 
+const filteredBookings = bookings.filter((booking) =>
+        booking.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        booking.id?.toString().includes(searchQuery)
+);
     return (
         <div>
             <AdNav />
@@ -115,7 +121,7 @@ function Appointment() {
                 <h1>Appointments</h1>
                 <div className={styles["appointment-navigation"]}>
                     <div className={styles["appointment-search"]}>
-                        <input type="text" placeholder="Search by Patient Name or ID" />
+                        <input type="text" placeholder="Search by Patient Name or ID" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                         <button>Search</button>
                     </div>
                     <button onClick={() => setShowNewForm(true)}>+ New Appointment</button>
@@ -129,6 +135,7 @@ function Appointment() {
                             </th>
                             <th>ID</th>
                             <th>Patient Name</th>
+                            <th>Email</th>
                             <th>Contact</th>
                             <th>Service</th>
                             <th>Date</th>
@@ -142,7 +149,7 @@ function Appointment() {
                         </tr>
                     </thead>
                     <tbody>
-                        {bookings.map((booking, index) => (
+                        {filteredBookings.map((booking, index) => (
                             <tr key={index}>
                                 <td>
                                     <input
@@ -155,6 +162,7 @@ function Appointment() {
                                     <>
                                         <td>{booking.id || "—"}</td>
                                         <td><input defaultValue={booking.name} onChange={(e) => booking.name = e.target.value} /></td>
+                                        <td><input defaultValue={booking.email} onChange={(e) => booking.email = e.target.value} /></td>
                                         <td><input defaultValue={booking.contact} onChange={(e) => booking.contact = e.target.value} /></td>
                                         <td><input defaultValue={booking.service} onChange={(e) => booking.service = e.target.value} /></td>
                                         <td><input defaultValue={booking.date} onChange={(e) => booking.date = e.target.value} /></td>
@@ -173,6 +181,7 @@ function Appointment() {
                                     <>
                                         <td>{booking.id || "—"}</td>
                                         <td>{booking.name}</td>
+                                        <td>{booking.email}</td>
                                         <td>{booking.contact}</td>
                                         <td>{booking.service}</td>
                                         <td>{booking.date}</td>
