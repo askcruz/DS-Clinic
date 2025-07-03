@@ -924,17 +924,27 @@ input[type="checkbox"] {
 
 /* ============ ULTRA-WIDE SCREENS (≥ 2560px) ============ */
 @media (min-width: 2560px) {
-  .main-content-wrapper,
-  .appointment-content,
-  .dashboard-content,
-  .overview-dashboard,
-  .upcoming-section,
-  .missed-section,
-  .profile-container {
-    max-width: 1800px;
+  .appointment-content {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    max-width: 2000px;
     padding: 2.5rem;
+    box-sizing: border-box;
+  }
+
+  .table-responsive {
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+  }
+
+  .appointment-table {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    font-size: 1.3rem;
   }
 
   .appointment-content h1,
@@ -951,10 +961,6 @@ input[type="checkbox"] {
 
   .overview-number {
     font-size: 2.5rem;
-  }
-
-  .appointment-table {
-    font-size: 1.2rem;
   }
 
   .modal form {
@@ -989,6 +995,80 @@ input[type="checkbox"] {
     padding: 10px 20px;
   }
 }
+
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .appointment-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1600px;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+
+  .table-responsive {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+  }
+
+  .appointment-table {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+  }
+
+  .appointment-content h1,
+  .dashboard-content h1 {
+    font-size: 3.5rem;
+    padding: 1.2rem 2rem;
+  }
+
+  .overview-item {
+    min-width: 240px;
+    padding: 2rem;
+    font-size: 1.3rem;
+  }
+
+  .overview-number {
+    font-size: 2.3rem;
+  }
+
+  .modal form {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  .profile-card {
+    min-width: 600px;
+    min-height: 280px;
+  }
+
+  .profile-avatar {
+    width: 130px;
+    height: 130px;
+  }
+
+  .appointment-actions button,
+  .appointment-search button,
+  .appointment-search input[type="text"] {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.3rem;
+  }
+
+  .appointment-navigation > button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.3rem;
+  }
+
+  .view-toggle {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
 
 
 /* ============ ROOT VARIABLES FOR SCALING ============ */
@@ -1050,37 +1130,4 @@ input[type="checkbox"] {
   font-size: var(--font-small);
 }
 
-/* Reuse original @media query for ultra-wide screens */
-@media (min-width: 2560px) {
-  .main-content-wrapper,
-  .appointment-content,
-  .dashboard-content,
-  .overview-dashboard,
-  .upcoming-section,
-  .missed-section,
-  .profile-container {
-    max-width: 1800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2.5rem;
-  }
 
-  .overview-item {
-    min-width: 260px;
-    padding: 2.5rem;
-  }
-
-  .modal form {
-    max-width: 700px;
-  }
-
-  .profile-card {
-    min-width: 700px;
-    min-height: 320px;
-  }
-
-  .profile-avatar {
-    width: 140px;
-    height: 140px;
-  }
-}
