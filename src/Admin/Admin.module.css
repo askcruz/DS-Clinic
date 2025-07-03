@@ -2,13 +2,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 13vw;
+  width: 15rem;
   height: 100vh;
+  min-width: 15rem;
+  max-width: 15rem;
   background: #10324a;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 1rem;
   z-index: 9999;
   overflow-y: auto;
 }
@@ -21,17 +23,19 @@
 }
 
 .admin-navbar-logo {
+  max-width: 160px;
+  max-height: 160px;
   width: 97%;
   display: flex;
   justify-content: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
 
 .admin-navbar-items {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
 }
 
@@ -39,12 +43,12 @@
   background: none;
   border: none;
   color: #fff;
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1rem;
   cursor: pointer;
-  width: 100%;
+  width: 105%;
   transition: background 0.3s;
 }
 
@@ -58,20 +62,21 @@
 
 /* Add a main content wrapper to handle the offset */
 .main-content-wrapper {
-  min-height: 100vh;
-  margin-left: 14vw;
+  min-height: 110vh;
+  margin-left: 15rem; /* replaced 14vw */
   padding: 0;
   box-sizing: border-box;
-  width: calc(100% - 14vw);
+  width: calc(100% - 15rem); /* replaced 14vw */
 }
 
 .appointment-content {
-  margin-left: 13vw;
-  padding: 2rem;
-  width: calc(100% - 13vw);
+  margin-left: 16.5rem;
+  min-height: 45vH;
+  width: calc(96vw - 15rem);
+  max-width: calc(100vw - 15rem);
   box-sizing: border-box;
-  min-height: 100vh;
 }
+
 
 .appointment-content h1 {
   width: auto;
@@ -98,13 +103,14 @@
 }
 
 .appointment-table {
-  min-width: 1100px; /* or whatever fits your columns */
+  min-width: 1200px; /* or whatever fits your columns */
   width: max-content; /* only as wide as needed */
   margin: 0 auto;
+  margin-right: 1.5rem;
   border-collapse: collapse;
   background: #f2f2f2;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
 }
@@ -112,7 +118,7 @@
 .appointment-table th,
 .appointment-table td {
   border: 1px solid #232121;
-  padding: 1.6rem;
+  padding: 0.7rem;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -182,9 +188,9 @@ input[type="checkbox"] {
   background: #17496b;
   color: #fff;
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   margin-right: 2rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 20rem;
@@ -229,8 +235,8 @@ input[type="checkbox"] {
   background: #17496b;
   color: #fff;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 10rem;
@@ -245,8 +251,8 @@ input[type="checkbox"] {
   background: #17496b;
   color: #fff;
   border: none;
-  padding: 1rem 2rem;
-  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 10rem;
@@ -262,8 +268,8 @@ input[type="checkbox"] {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100rem;
+  height: 50rem;
   background: rgba(16, 50, 74, 0.25); /* semi-transparent dark overlay */
   display: flex;
   align-items: center;
@@ -277,13 +283,16 @@ input[type="checkbox"] {
   border: 1px solid #010000;
   border-radius: 1rem;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-  padding: 2.5rem 2rem;
+  padding: 1.5rem 1.2rem;      /* smaller padding */
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  min-width: 350px;
+  gap: 1rem;                   /* smaller gap */
+  min-width: 260px;            /* smaller min width */
+  max-width: 400px;            /* set a max width */
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.1rem;           /* slightly smaller font */
+  max-height: 70vh;            /* smaller max height */
+  overflow-y: auto;
 }
 
 .modal form input,
@@ -337,50 +346,6 @@ input[type="checkbox"] {
 .modal form button[type="button"]:hover {
   background: #17496b;
   color: #fff;
-}
-
-/*Dashboard section*/
-
-.dashboard-content {
-  margin-left: 13vw;
-  padding: 2rem;
-  width: calc(100% - 13vw);
-  box-sizing: border-box;
-  min-height: 100vh;
-}
-
-.dashboard-content h1 {
-  width: auto;
-  min-width: 300px;
-  background: #fff;
-  color: #10324a;
-  font-size: 3.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
-  padding: 1rem 2rem;
-  border-radius: 0;
-  border-left: 6px solid #10324a;
-  box-shadow: none;
-  margin-bottom: 2rem;
-}
-
-.inquiry-stats {
-  margin-bottom: 15px;
-  font-size: 14px;
-  color: #666;
-}
-
-.message-cell {
-  max-width: 300px;
-}
-
-.message-preview {
-  max-height: 60px;
-  overflow-y: auto;
-  word-wrap: break-word;
-  white-space: pre-wrap;
 }
 
 /* Inquiry-specific styles */
@@ -640,11 +605,11 @@ input[type="checkbox"] {
 /*Dashboard section*/
 
 .dashboard-content {
-  margin-left: 13vw;
-  padding: 2rem;
-  width: calc(100% - 13vw);
+  margin-left: 16.5rem;
+  width: calc(90vw - 15rem);
+  max-width: calc(100vw - 15rem);
   box-sizing: border-box;
-  min-height: 3vh;
+  overflow-x: auto;
 }
 
 .dashboard-content h1 {
@@ -666,61 +631,63 @@ input[type="checkbox"] {
 
 /*Dashboard overview cards*/
 .overview-dashboard {
-  margin-left: 14vw;
+  margin-left: 15rem; /* replaced 14vw */
   display: flex;
   gap: 2rem;
   margin-top: -1rem;
   justify-content: flex-start;
   padding: 1rem;
-  width: calc(100% - 15vw);
+  width: calc(100% - 15rem); /* replaced 15vw */
   box-sizing: border-box;
 }
+
 
 .overview-item {
   background: #dbdbdb;
   border-radius: 10px;
-  padding: 3rem 3rem;
+  padding: 1.2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 300px;
+  min-width: 180px;
   min-height: 70px;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.07);
 }
 
 .overview-number {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #193447;
   margin-bottom: 0.5rem;
 }
 
 .overview-label {
-  font-size: 2.1rem;
+  font-size: 1rem;
   color: #193447;
   font-weight: 500;
 }
 
 /*Dashboard upcoming appointments*/
 .upcoming-section {
-  margin-left: 14vw;
-  margin-top: 3rem;
-  width: calc(100% - 15vw);
+  margin-left: 16rem;
+  margin-top: 1.5rem;
+  width: calc(90% - 12rem);
   background: #ffffff;
-  padding: 2rem 3rem;
-  border-radius: 12px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  padding: 1rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.04);
   box-sizing: border-box;
 }
 
+
 .upcoming-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #10324a;
   margin-bottom: 1.5rem;
 }
 
 .upcoming-list h3 {
-  font-size: 1.8rem;
+  font-size: 1.2.rem;
   margin-top: 1rem;
   color: #145da0;
 }
@@ -745,19 +712,20 @@ input[type="checkbox"] {
 
 /* Missed / Overdue Appointments Section */
 .missed-section {
-  margin-left: 14vw;
+  margin-left: 16rem; /* replaced 14vw */
   padding: 2rem;
-  width: calc(100% - 15vw);
+  width: calc(93% - 15rem); /* replaced 15vw */
   box-sizing: border-box;
   background: #fff3f3;
   border-left: 6px solid #b30000;
   margin-top: 2rem;
   border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.06);
 }
 
+
 .missed-section h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #b30000;
   margin-bottom: 1rem;
 }
@@ -768,7 +736,7 @@ input[type="checkbox"] {
 }
 
 .missed-section li {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #333;
   margin-bottom: 0.75rem;
   background-color: #ffe5e5;
@@ -784,11 +752,11 @@ input[type="checkbox"] {
 /* Profile Page */
 
 .profile-container {
-  margin-left: 13vw;
+  margin-left: 15rem; /* replaced 13vw */
   padding: 2rem;
-  width: calc(100% - 13vw);
+  width: calc(100% - 15rem); /* replaced 13vw */
   box-sizing: border-box;
-  min-height: 3vh;
+  min-height: 100vh; /* replaced 3vh */
 }
 
 .profile-section {
@@ -803,31 +771,30 @@ input[type="checkbox"] {
   background: #d6d0d0;
   border-radius: 15px;
   box-shadow: 0 26px 26px rgba(45, 13, 228, 0.08);
-  padding: 2rem 3rem;
+  padding: 1rem 1.2rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
-  min-width: 50vw;
-  min-height: 60vh;
+  min-width: 320px;
+  min-height: 200px;
 }
 
 .profile-avatar {
-  width: 320px;
-  height: 320px;
+  width: 120px;
+  height: 120px;
+  margin-left: 1rem;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #0c2d48;
-  margin-left: 6.5rem;
 }
 
 .profile-info {
+  font-size: 1rem;
+  margin-left: 1rem;
+  gap: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;         /* increased spacing between items */
-  font-size: 2rem;     /* larger text */
-  line-height: 1.5;    /* more readable */
-  margin-left: 3.5rem;
 }
 
 .profile-edit-btn {
@@ -845,4 +812,275 @@ input[type="checkbox"] {
 
 .profile-edit-btn:hover {
   background: #145da0;
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+
+@media (max-width: 1024px) {
+  .admin-navbar {
+    width: 12rem;
+    min-width: 12rem;
+    max-width: 12rem;
+  }
+
+  .main-content-wrapper,
+  .dashboard-content,
+  .overview-dashboard,
+  .upcoming-section,
+  .missed-section,
+  .profile-container,
+  .appointment-content {
+    margin-left: 12rem;
+    width: calc(100% - 12rem);
+  }
+
+  .appointment-content h1,
+  .dashboard-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .appointment-search input[type="text"] {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+
+  .admin-navbar-logo {
+    display: none;
+  }
+
+  .admin-navbar-item {
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: auto;
+  }
+
+  .main-content-wrapper,
+  .dashboard-content,
+  .overview-dashboard,
+  .upcoming-section,
+  .missed-section,
+  .profile-container,
+  .appointment-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .appointment-content h1,
+  .dashboard-content h1 {
+    font-size: 2rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .appointment-table {
+    font-size: 0.9rem;
+    min-width: unset;
+  }
+
+  .appointment-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .appointment-navigation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .appointment-search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .appointment-search input[type="text"],
+  .appointment-search button {
+    width: 100%;
+  }
+
+  .modal {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .modal form {
+    max-width: 90%;
+    max-height: 90vh;
+  }
+}
+
+/* ============ ULTRA-WIDE SCREENS (≥ 2560px) ============ */
+@media (min-width: 2560px) {
+  .main-content-wrapper,
+  .appointment-content,
+  .dashboard-content,
+  .overview-dashboard,
+  .upcoming-section,
+  .missed-section,
+  .profile-container {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.5rem;
+  }
+
+  .appointment-content h1,
+  .dashboard-content h1 {
+    font-size: 4.2rem;
+    padding: 1.5rem 2.5rem;
+  }
+
+  .overview-item {
+    min-width: 260px;
+    padding: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  .overview-number {
+    font-size: 2.5rem;
+  }
+
+  .appointment-table {
+    font-size: 1.2rem;
+  }
+
+  .modal form {
+    font-size: 1.4rem;
+    max-width: 700px;
+  }
+
+  .profile-card {
+    min-width: 700px;
+    min-height: 320px;
+  }
+
+  .profile-avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .appointment-actions button,
+  .appointment-search button,
+  .appointment-search input[type="text"] {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .appointment-navigation > button {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .view-toggle {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}
+
+
+/* ============ ROOT VARIABLES FOR SCALING ============ */
+:root {
+  --font-heading: clamp(2rem, 2vw + 1rem, 4.2rem);
+  --font-body: clamp(1rem, 0.6vw + 0.8rem, 1.3rem);
+  --font-small: clamp(0.9rem, 0.4vw + 0.5rem, 1rem);
+  --font-button: clamp(1rem, 0.7vw + 0.5rem, 1.3rem);
+  --padding-standard: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+/* Overwrite font-sizes using clamp() */
+.appointment-content h1,
+.dashboard-content h1 {
+  font-size: var(--font-heading);
+  padding: var(--padding-standard);
+}
+
+.overview-number,
+.unread-count {
+  font-size: clamp(1.5rem, 1vw + 1rem, 2.5rem);
+}
+
+.overview-label,
+.appointment-table,
+.status-select,
+.status-badge,
+.action-btn,
+.appointment-table td,
+.profile-info,
+.missed-section li,
+.upcoming-list li {
+  font-size: var(--font-body);
+}
+
+.appointment-search input[type="text"],
+.modal form input,
+.modal form select,
+.profile-edit-btn,
+.modal-footer button,
+.view-toggle,
+.appointment-actions button,
+.appointment-navigation > button,
+.modal form button[type="submit"],
+.modal form button[type="button"] {
+  font-size: var(--font-button);
+  padding: var(--padding-standard);
+}
+
+/* Set fallback where needed */
+.profile-card {
+  font-size: var(--font-body);
+  min-width: 320px;
+  min-height: 200px;
+}
+
+/* Optional tweak for better readability */
+.appointment-table th {
+  font-size: var(--font-small);
+}
+
+/* Reuse original @media query for ultra-wide screens */
+@media (min-width: 2560px) {
+  .main-content-wrapper,
+  .appointment-content,
+  .dashboard-content,
+  .overview-dashboard,
+  .upcoming-section,
+  .missed-section,
+  .profile-container {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.5rem;
+  }
+
+  .overview-item {
+    min-width: 260px;
+    padding: 2.5rem;
+  }
+
+  .modal form {
+    max-width: 700px;
+  }
+
+  .profile-card {
+    min-width: 700px;
+    min-height: 320px;
+  }
+
+  .profile-avatar {
+    width: 140px;
+    height: 140px;
+  }
 }
