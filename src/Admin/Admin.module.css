@@ -1085,30 +1085,6 @@ input[type="checkbox"] {
     font-weight: 600;
 }
 
-.charts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.chart-container {
-    flex: 1;
-    min-width: 300px;
-    min-height: 300px; /* Important for chart rendering */
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative;
-}
-
-/* Ensure canvas elements have dimensions */
-.chart-container canvas {
-    width: 100% !important;
-    height: auto !important;
-}
-
 @media (max-width: 768px) {
     .chart-container {
         padding: 1rem;
@@ -1175,5 +1151,3 @@ input[type="checkbox"] {
 .appointment-table th {
   font-size: var(--font-small);
 }
-
-
