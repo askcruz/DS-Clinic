@@ -3,6 +3,17 @@ import { supabase } from "./createBooking";
 import AdNav from "./AdNav";
 import NewAppointmentForm from "./NewAppointmentForm";
 import styles from "./Admin.module.css";
+import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 function Appointment() {
     // const [bookings, setBookings] = React.useState(() => {
@@ -14,10 +25,17 @@ function Appointment() {
     const [editingRows, setEditingRows] = React.useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [showNewForm, setShowNewForm] = React.useState(false);
+    const [chartData, setChartData] = useState(null);
 
     useEffect(() => {
         fetchBookings();
     }, []);
+
+    useEffect(() => {
+        if (bookings.length > 0) {
+            prepareChartData();
+        }
+    }, [bookings]);
 
     const fetchBookings = async () => {
         try {
@@ -32,6 +50,45 @@ function Appointment() {
         } finally {
             setLoading(false);
         }
+    };
+
+     const prepareChartData = () => {
+        const monthlyCounts = {};
+        
+        bookings.forEach(booking => {
+            if (booking.date) {
+                try {
+                    const date = new Date(booking.date);
+                    if (!isNaN(date)) {
+                        const monthYear = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+                        monthlyCounts[monthYear] = (monthlyCounts[monthYear] || 0) + 1;
+                    }
+                } catch (e) {
+                    console.warn('Invalid date format:', booking.date);
+                }
+            }
+        });
+
+        const sortedMonths = Object.keys(monthlyCounts).sort();
+        
+        const data = {
+            labels: sortedMonths.map(month => {
+                const [year, monthNum] = month.split('-');
+                return new Date(year, monthNum - 1).toLocaleString('default', { 
+                    month: 'short', 
+                    year: 'numeric' 
+                });
+            }),
+            datasets: [{
+                label: 'Number of Appointments',
+                data: sortedMonths.map(month => monthlyCounts[month]),
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        };
+        
+        setChartData(data);
     };
 
     const handleAddBooking = async (newBooking) => {
@@ -198,6 +255,36 @@ const filteredBookings = bookings.filter((booking) =>
                         ))}
                     </tbody>
                 </table>
+                </div>
+                <div className={styles["chart-container"]}>
+                    <h2>Appointments by Month</h2>
+                    {chartData ? (
+                        <Bar 
+                            data={chartData}
+                            options={{
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                    title: {
+                                        display: true,
+                                        text: 'Monthly Appointment Counts'
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        ticks: {
+                                            stepSize: 1
+                                        }
+                                    }
+                                }
+                            }}
+                        />
+                    ) : (
+                        <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
+                    )}
                 </div>
                 {showNewForm && (
                     <div className={styles["modal"]}>
