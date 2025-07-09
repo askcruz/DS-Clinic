@@ -441,21 +441,21 @@ function Inquiry() {
                             <option value="resolved">Resolved</option>
                           </select>
 
-                        <button
-                          className={styles["action-btn-danger"]}
-                          onClick={() => archiveInquiry(inquiry.id)}
-                          title="Archive this inquiry"
-                        >
-                          Archive
-                        </button>
-                      </>
-                    )}
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+                          <button
+                            className={styles["action-btn-danger"]}
+                            onClick={() => archiveInquiry(inquiry.id)}
+                            title="Archive this inquiry"
+                          >
+                            Archive
+                          </button>
+                        </>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
         </div>
 
         {/* Modal for viewing full inquiry */}
