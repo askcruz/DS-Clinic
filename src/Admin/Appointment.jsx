@@ -67,7 +67,6 @@ function Appointment() {
         }
     };
 
-    //Preparing of ChartData (Bar Chart)
      const prepareChartData = () => {
         const monthlyCounts = {};
         
@@ -226,61 +225,6 @@ const filteredBookings = bookings.filter((booking) =>
             <AdNav />
             <div className={styles["appointment-content"]}>
                 <h1>Appointments</h1>
-                <div className={styles["charts-container"]}>
-                    <div className={styles["chart-container"]}> 
-                        <h2>Appointments by Month</h2>
-                        {chartData ? (
-                            <Bar 
-                                data={chartData}
-                                options={{
-                                    responsive: true,
-                                    plugins: {
-                                        legend: {
-                                            position: 'top',
-                                        },
-                                        title: {
-                                            display: true,
-                                            text: 'Monthly Appointment Counts'
-                                        }
-                                    },
-                                    scales: {
-                                        y: {
-                                            beginAtZero: true,
-                                            ticks: {
-                                                stepSize: 1
-                                            }
-                                        }
-                                    }
-                                }}
-                            />
-                        ) : (
-                            <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
-                        )}
-                    </div>
-                    
-                    <div className={styles["chart-container"]}>
-                        <h2>Service Frequency</h2>
-                        {serviceChartData ? (
-                            <Pie
-                                data={serviceChartData}
-                                options={{
-                                    responsive: true,
-                                    plugins: {
-                                        legend: {
-                                            position: 'right',
-                                        },
-                                        title: {
-                                            display: true,
-                                            text: 'Service Distribution'
-                                        }
-                                    }
-                                }}
-                            />
-                        ) : (
-                            <p>{loading ? 'Loading data...' : 'No service data available'}</p>
-                        )}
-                    </div>
-                </div>
                 <div className={styles["appointment-navigation"]}>
                     <div className={styles["appointment-search"]}>
                         <input type="text" placeholder="Search by Patient Name or ID" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
