@@ -354,91 +354,92 @@ function Inquiry() {
           )}
         </div>
 
-        <table className={styles["appointment-table"]}>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Message Preview</th>
-              <th>Status</th>
-              <th>Date Received</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredInquiries.length === 0 ? (
+        <div className={styles["table-responsive"]}>
+          <table className={styles["appointment-table"]}>
+            <thead>
               <tr>
-                <td
-                  colSpan="7"
-                  style={{ textAlign: "center", padding: "20px" }}
-                >
-                  {viewArchived
-                    ? searchTerm
-                      ? "No archived inquiries match your search."
-                      : "No archived inquiries."
-                    : searchTerm || statusFilter !== "all"
-                    ? "No inquiries match your filters."
-                    : "No inquiries found."}
-                </td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message Preview</th>
+                <th>Status</th>
+                <th>Date Received</th>
+                <th>Actions</th>
               </tr>
-            ) : (
-              filteredInquiries.map((inquiry) => (
-                <tr
-                  key={inquiry.id}
-                  className={
-                    inquiry.status === "unread" && !viewArchived
-                      ? styles["unread-row"]
-                      : ""
-                  }
-                >
-                  <td>{inquiry.id}</td>
-                  <td>{inquiry.name}</td>
-                  <td>{inquiry.email}</td>
-                  <td className={styles["message-cell"]}>
-                    {truncateMessage(inquiry.message)}
+            </thead>
+            <tbody>
+              {filteredInquiries.length === 0 ? (
+                <tr>
+                  <td
+                    colSpan="7"
+                    style={{ textAlign: "center", padding: "20px" }}
+                  >
+                    {viewArchived
+                      ? searchTerm
+                        ? "No archived inquiries match your search."
+                        : "No archived inquiries."
+                      : searchTerm || statusFilter !== "all"
+                      ? "No inquiries match your filters."
+                      : "No inquiries found."}
                   </td>
-                  <td>{getStatusBadge(inquiry.status)}</td>
-                  <td>{formatDate(inquiry.created_at)}</td>
-                  <td className={styles["actions-cell"]}>
-                    <button
-                      className={styles["action-btn"]}
-                      onClick={() => viewInquiry(inquiry)}
-                      title="View full message"
-                    >
-                      View
-                    </button>
+                </tr>
+              ) : (
+                filteredInquiries.map((inquiry) => (
+                  <tr
+                    key={inquiry.id}
+                    className={
+                      inquiry.status === "unread" && !viewArchived
+                        ? styles["unread-row"]
+                        : ""
+                    }
+                  >
+                    <td>{inquiry.id}</td>
+                    <td>{inquiry.name}</td>
+                    <td>{inquiry.email}</td>
+                    <td className={styles["message-cell"]}>
+                      {truncateMessage(inquiry.message)}
+                    </td>
+                    <td>{getStatusBadge(inquiry.status)}</td>
+                    <td>{formatDate(inquiry.created_at)}</td>
+                    <td className={styles["actions-cell"]}>
+                      <button
+                        className={styles["action-btn"]}
+                        onClick={() => viewInquiry(inquiry)}
+                        title="View full message"
+                      >
+                        View
+                      </button>
 
-                    {viewArchived ? (
-                      <>
-                        <button
-                          className={styles["action-btn"]}
-                          onClick={() => restoreInquiry(inquiry.id)}
-                          title="Restore to inbox"
-                        >
-                          Restore
-                        </button>
-                        <button
-                          className={styles["action-btn-danger"]}
-                          onClick={() => permanentlyDelete(inquiry.id)}
-                          title="Delete permanently"
-                        >
-                          Delete
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <select
-                          value={inquiry.status || "unread"}
-                          onChange={(e) =>
-                            updateInquiryStatus(inquiry.id, e.target.value)
-                          }
-                          className={styles["status-select"]}
-                        >
-                          <option value="unread">Unread</option>
-                          <option value="read">Read</option>
-                          <option value="resolved">Resolved</option>
-                        </select>
+                      {viewArchived ? (
+                        <>
+                          <button
+                            className={styles["action-btn"]}
+                            onClick={() => restoreInquiry(inquiry.id)}
+                            title="Restore to inbox"
+                          >
+                            Restore
+                          </button>
+                          <button
+                            className={styles["action-btn-danger"]}
+                            onClick={() => permanentlyDelete(inquiry.id)}
+                            title="Delete permanently"
+                          >
+                            Delete
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <select
+                            value={inquiry.status || "unread"}
+                            onChange={(e) =>
+                              updateInquiryStatus(inquiry.id, e.target.value)
+                            }
+                            className={styles["status-select"]}
+                          >
+                            <option value="unread">Unread</option>
+                            <option value="read">Read</option>
+                            <option value="resolved">Resolved</option>
+                          </select>
 
                         <button
                           className={styles["action-btn-danger"]}
@@ -455,6 +456,7 @@ function Inquiry() {
             )}
           </tbody>
         </table>
+        </div>
 
         {/* Modal for viewing full inquiry */}
         {showModal && selectedInquiry && (
