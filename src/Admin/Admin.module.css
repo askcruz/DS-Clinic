@@ -1070,6 +1070,34 @@ input[type="checkbox"] {
   }
 }
 
+.charts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.chart-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific style for pie chart container */
+.pie-container {
+    max-width: 400px; /* Smaller width for pie chart */
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        padding: 1rem;
+        min-width: 100%;
+    }
+}
+
 
 
 /* ============ ROOT VARIABLES FOR SCALING ============ */
@@ -1130,5 +1158,3 @@ input[type="checkbox"] {
 .appointment-table th {
   font-size: var(--font-small);
 }
-
-
