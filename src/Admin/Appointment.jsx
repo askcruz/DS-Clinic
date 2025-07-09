@@ -3,8 +3,8 @@ import { supabase } from "./createBooking";
 import AdNav from "./AdNav";
 import NewAppointmentForm from "./NewAppointmentForm";
 import styles from "./Admin.module.css";
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Bar, Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
@@ -12,7 +12,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ArcElement
 );
 
 function Appointment() {
@@ -26,6 +27,7 @@ function Appointment() {
     const [searchQuery, setSearchQuery] = useState('');
     const [showNewForm, setShowNewForm] = React.useState(false);
     const [chartData, setChartData] = useState(null);
+    const [serviceChartData, setServiceChartData] = useState(null)
 
     useEffect(() => {
         fetchBookings();
@@ -34,6 +36,7 @@ function Appointment() {
     useEffect(() => {
         if (bookings.length > 0) {
             prepareChartData();
+            prepareServiceChartData();
         }
     }, [bookings]);
 
@@ -90,6 +93,36 @@ function Appointment() {
         };
         
         setChartData(data);
+    };
+
+    //Preparing ChartData (Pie)
+    const prepareServiceChartData = () => {
+        const serviceCounts = {};
+        
+        bookings.forEach(booking => {
+            if (booking.service) {
+                serviceCounts[booking.service] = (serviceCounts[booking.service] || 0) + 1;
+            }
+        });
+
+        const services = Object.keys(serviceCounts);
+        const counts = services.map(service => serviceCounts[service]);
+        
+        const backgroundColors = services.map((_, i) => {
+            const hue = (i * 360 / services.length) % 360;
+            return `hsl(${hue}, 70%, 50%)`;
+        });
+
+        const data = {
+            labels: services,
+            datasets: [{
+                data: counts,
+                backgroundColor: backgroundColors,
+                borderWidth: 1
+            }]
+        };
+        
+        setServiceChartData(data);
     };
 
     const handleAddBooking = async (newBooking) => {
@@ -177,35 +210,56 @@ const filteredBookings = bookings.filter((booking) =>
             <AdNav />
             <div className={styles["appointment-content"]}>
                 <h1>Appointments</h1>
-                <div className={styles["chart-container"]}> 
-                    <h2>Appointments by Month</h2>
-                    {chartData ? (
-                        <Bar 
-                            data={chartData}
-                            options={{
-                                responsive: true,
-                                plugins: {
-                                    legend: {
-                                        position: 'top',
+                 <div className={styles["charts-container"]}>
+                    <div className={styles["chart-container"]}> 
+                        <h2>Appointments by Month</h2>
+                        {chartData ? (
+                            <Bar 
+                                data={chartData}
+                                options={{
+                                    responsive: true,
+                                    aspectRatio: 2,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        title: {
+                                            display: false
+                                        }
                                     },
-                                    title: {
-                                        display: true,
-                                        text: 'Monthly Appointment Counts'
-                                    }
-                                },
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        ticks: {
-                                            stepSize: 1
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            ticks: {
+                                                stepSize: 1
+                                            }
                                         }
                                     }
-                                }
-                            }}
-                        />
-                    ) : (
-                        <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
-                    )}
+                                }}
+                            />
+                        ) : (
+                            <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
+                        )}
+                    </div>
+                      <div className={`${styles["chart-container"]} ${styles["pie-container"]}`}>
+                        <h2>Service Distribution</h2>
+                        {serviceChartData ? (
+                            <Pie
+                                data={serviceChartData}
+                                options={{
+                                    responsive: true,
+                                    aspectRatio: 1,
+                                    plugins: {
+                                        legend: {
+                                            position: 'right',
+                                        },
+                                    }
+                                }}
+                            />
+                        ) : (
+                            <p>{loading ? 'Loading data...' : 'No service data available'}</p>
+                        )}
+                    </div>
                 </div>
                 <div className={styles["appointment-navigation"]}>
                     <div className={styles["appointment-search"]}>
