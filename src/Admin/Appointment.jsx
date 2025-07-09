@@ -1,10 +1,10 @@
-import React, {useState, useEffect}from "react";
+import React, {useState, useEffect, useRef}from "react";
 import { supabase } from "./createBooking";
 import AdNav from "./AdNav";
 import NewAppointmentForm from "./NewAppointmentForm";
 import styles from "./Admin.module.css";
-import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Bar, Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 
 ChartJS.register(
   CategoryScale,
@@ -12,7 +12,8 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ArcElement
 );
 
 function Appointment() {
@@ -26,14 +27,28 @@ function Appointment() {
     const [searchQuery, setSearchQuery] = useState('');
     const [showNewForm, setShowNewForm] = React.useState(false);
     const [chartData, setChartData] = useState(null);
+    const [serviceChartData, setServiceChartData] = useState(null);
 
-    useEffect(() => {
+    const barChartRef = useRef(null);
+    const pieChartRef = useRef(null);
+
+     useEffect(() => {
         fetchBookings();
+        
+        return () => {
+            if (barChartRef.current) {
+                barChartRef.current.destroy();
+            }
+            if (pieChartRef.current) {
+                pieChartRef.current.destroy();
+            }
+        };
     }, []);
 
     useEffect(() => {
         if (bookings.length > 0) {
             prepareChartData();
+            prepareServiceChartData();
         }
     }, [bookings]);
 
@@ -52,6 +67,7 @@ function Appointment() {
         }
     };
 
+    //Preparing of ChartData (Bar Chart)
      const prepareChartData = () => {
         const monthlyCounts = {};
         
@@ -89,6 +105,40 @@ function Appointment() {
         };
         
         setChartData(data);
+    };
+
+    // Preparing of ChartData (Pie Chart)
+    const prepareServiceChartData = () => {
+        const serviceCounts = {};
+        
+        bookings.forEach(booking => {
+            if (booking.service) {
+                serviceCounts[booking.service] = (serviceCounts[booking.service] || 0) + 1;
+            }
+        });
+
+        const services = Object.keys(serviceCounts);
+        const backgroundColors = [
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(199, 199, 199, 0.6)'
+        ];
+
+        const data = {
+            labels: services,
+            datasets: [{
+                data: services.map(service => serviceCounts[service]),
+                backgroundColor: backgroundColors.slice(0, services.length),
+                borderColor: backgroundColors.map(color => color.replace('0.6', '1')),
+                borderWidth: 1
+            }]
+        };
+        
+        setServiceChartData(data);
     };
 
     const handleAddBooking = async (newBooking) => {
@@ -176,6 +226,61 @@ const filteredBookings = bookings.filter((booking) =>
             <AdNav />
             <div className={styles["appointment-content"]}>
                 <h1>Appointments</h1>
+                <div className={styles["charts-container"]}>
+                    <div className={styles["chart-container"]}> 
+                        <h2>Appointments by Month</h2>
+                        {chartData ? (
+                            <Bar 
+                                data={chartData}
+                                options={{
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Monthly Appointment Counts'
+                                        }
+                                    },
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true,
+                                            ticks: {
+                                                stepSize: 1
+                                            }
+                                        }
+                                    }
+                                }}
+                            />
+                        ) : (
+                            <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
+                        )}
+                    </div>
+                    
+                    <div className={styles["chart-container"]}>
+                        <h2>Service Frequency</h2>
+                        {serviceChartData ? (
+                            <Pie
+                                data={serviceChartData}
+                                options={{
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            position: 'right',
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Service Distribution'
+                                        }
+                                    }
+                                }}
+                            />
+                        ) : (
+                            <p>{loading ? 'Loading data...' : 'No service data available'}</p>
+                        )}
+                    </div>
+                </div>
                 <div className={styles["appointment-navigation"]}>
                     <div className={styles["appointment-search"]}>
                         <input type="text" placeholder="Search by Patient Name or ID" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
@@ -255,36 +360,6 @@ const filteredBookings = bookings.filter((booking) =>
                         ))}
                     </tbody>
                 </table>
-                </div>
-                <div className={styles["chart-container"]}>
-                    <h2>Appointments by Month</h2>
-                    {chartData ? (
-                        <Bar 
-                            data={chartData}
-                            options={{
-                                responsive: true,
-                                plugins: {
-                                    legend: {
-                                        position: 'top',
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Monthly Appointment Counts'
-                                    }
-                                },
-                                scales: {
-                                    y: {
-                                        beginAtZero: true,
-                                        ticks: {
-                                            stepSize: 1
-                                        }
-                                    }
-                                }
-                            }}
-                        />
-                    ) : (
-                        <p>{loading ? 'Loading data...' : 'No appointment data available'}</p>
-                    )}
                 </div>
                 {showNewForm && (
                     <div className={styles["modal"]}>
