@@ -555,17 +555,31 @@ function Appointment() {
                           onChange={(e) => (booking.time = e.target.value)}
                         />
                       </td>
+                      {/* Status as dropdown */}
                       <td>
-                        <input
+                        <select
                           defaultValue={booking.status}
                           onChange={(e) => (booking.status = e.target.value)}
-                        />
+                        >
+                          <option value="Pending">Pending</option>
+                          <option value="Confirmed">Confirmed</option>
+                          <option value="Completed">Completed</option>
+                          <option value="Cancelled">Cancelled</option>
+                        </select>
                       </td>
+                      {/* HMO as dropdown */}
                       <td>
-                        <input
+                        <select
                           defaultValue={booking.hmo}
                           onChange={(e) => (booking.hmo = e.target.value)}
-                        />
+                        >
+                          <option value="">None</option>
+                          <option value="Maxicare">Maxicare</option>
+                          <option value="PhilCare">PhilCare</option>
+                          <option value="Cocolife">Cocolife</option>
+                          <option value="EtiQa">EtiQa</option>
+                          {/* Add more HMO options as needed */}
+                        </select>
                       </td>
                       <td>
                         <input
@@ -582,17 +596,13 @@ function Appointment() {
                       <td>
                         <input
                           defaultValue={booking.occupation}
-                          onChange={(e) =>
-                            (booking.occupation = e.target.value)
-                          }
+                          onChange={(e) => (booking.occupation = e.target.value)}
                         />
                       </td>
                       <td>
                         <input
                           defaultValue={booking.hmoProvider}
-                          onChange={(e) =>
-                            (booking.hmoProvider = e.target.value)
-                          }
+                          onChange={(e) => (booking.hmoProvider = e.target.value)}
                         />
                       </td>
                       <td>
