@@ -472,9 +472,10 @@ function Appointment() {
           <div className={styles["appointment-search"]}>
             <input
               type="text"
-              placeholder="Search by Patient Name or ID"
+              placeholder="Search by Patient Name/ID"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              // style={{ fontSize: "12px" }}
             />
             <button>Search</button>
             <button onClick={exportToCSV}>Export to CSV</button>
@@ -596,13 +597,17 @@ function Appointment() {
                       <td>
                         <input
                           defaultValue={booking.occupation}
-                          onChange={(e) => (booking.occupation = e.target.value)}
+                          onChange={(e) =>
+                            (booking.occupation = e.target.value)
+                          }
                         />
                       </td>
                       <td>
                         <input
                           defaultValue={booking.hmoProvider}
-                          onChange={(e) => (booking.hmoProvider = e.target.value)}
+                          onChange={(e) =>
+                            (booking.hmoProvider = e.target.value)
+                          }
                         />
                       </td>
                       <td>

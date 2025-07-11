@@ -16,6 +16,14 @@ function Booking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
+
+    const selectedTime = form.time.value;
+    if (selectedTime < "10:00" || selectedTime > "18:00") {
+      alert("Please select a time between 10:00 AM and 6:00 PM.");
+      return;
+    }
+
+
     const bookingData = {
       name: `${form.Fname.value} ${form.Lname.value}`,
       email: form.email.value,
@@ -84,44 +92,52 @@ function Booking() {
             <div className={styles["form-row"]}>
               <label htmlFor="date">Preferred Date:</label>
               <input type="date" id="date" name="date" required />
+
               <label htmlFor="time">Preferred Time:</label>
-              <input type="time" id="time" name="time" required />
+              <input
+                type="time"
+                id="time"
+                name="time"
+                required
+                min="10:00"
+                max="18:00"
+              />
             </div>
 
             <div className={styles["form-row"]}>
               <label htmlFor="service">Service:</label>
               <select id="service" name="service" required>
                 <option value="">Select a service</option>
-                <option value="consultation">Consultation</option>
-                <option value="oral prophylaxis">Oral Prophylaxis</option>
-                <option value="oral prophylaxis with fluoride">
+                <option value="Consultation">Consultation</option>
+                <option value="Oral Prophylaxis">Oral Prophylaxis</option>
+                <option value="Oral prophylaxis with Fluoride">
                   Oral Prophylaxis with Fluoride
                 </option>
-                <option value="deep scaling">Deep Scaling</option>
-                <option value="panoramic radiograph">
+                <option value="Deep Scaling">Deep Scaling</option>
+                <option value="Panoramic Radiograph">
                   Panoramic Radiograph
                 </option>
-                <option value="complicated tooth filing">
+                <option value="Complicated Tooth Filing">
                   Complicated Tooth Filling
                 </option>
-                <option value="odontectomy">Odontectomy</option>
-                <option value="temporary filling">Temporary Filling</option>
-                <option value="root canal treatment">
+                <option value="Odontectomy">Odontectomy</option>
+                <option value="Temporary Filling">Temporary Filling</option>
+                <option value="Root Canal Treatment">
                   Root Canal Treatment
                 </option>
-                <option value="periapical radiograph">
+                <option value="Periapical Radiograph">
                   Periapical Radiograph
                 </option>
-                <option value="teeth whitening">Teeth Whitening</option>
-                <option value="simple tooth filing">Simple Tooth Filing</option>
-                <option value="pit and fissure sealant">
+                <option value="Teeth Whitening">Teeth Whitening</option>
+                <option value="Simple Tooth Filing">Simple Tooth Filing</option>
+                <option value="Pit and Fissure Sealant">
                   Pit and Fissure Sealant
                 </option>
-                <option value="dental implant">Dental Implant</option>
-                <option value="complicated tooth extraction">
+                <option value="Dental Implant">Dental Implant</option>
+                <option value="Complicated Tooth Extraction">
                   Complicated Tooth Extraction
                 </option>
-                <option value="simple tooth extraction">
+                <option value="Simple Tooth Extraction">
                   Simple Tooth Extraction
                 </option>
               </select>
