@@ -609,10 +609,8 @@ function Appointment() {
                           onChange={(e) => (booking.hmo = e.target.value)}
                         >
                           <option value="">None</option>
-                          <option value="Maxicare">Maxicare</option>
-                          <option value="PhilCare">PhilCare</option>
-                          <option value="Cocolife">Cocolife</option>
-                          <option value="EtiQa">EtiQa</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
                           {/* Add more HMO options as needed */}
                         </select>
                       </td>
@@ -637,12 +635,17 @@ function Appointment() {
                         />
                       </td>
                       <td>
-                        <input
+                        <select
                           defaultValue={booking.hmoProvider}
-                          onChange={(e) =>
-                            (booking.hmoProvider = e.target.value)
-                          }
-                        />
+                          onChange={(e) => (booking.hmoProvider = e.target.value)}
+                        >
+                          <option value="">None</option>
+                          <option value="Maxicare">Maxicare</option>
+                          <option value="PhilCare">PhilCare</option>
+                          <option value="Cocolife">Cocolife</option>
+                          <option value="EtiQa">EtiQa</option>
+                          {/* Add more HMO options as needed */}
+                        </select>
                       </td>
                       <td>
                         <button onClick={() => handleEditSave(index, booking)}>
