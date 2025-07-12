@@ -189,13 +189,16 @@ function Booking() {
                     required
                   />
 
-                  <label htmlFor="hmoProvider">HMO Provider:</label>
-                  <input
-                    type="text"
-                    id="hmoProvider"
-                    name="hmoProvider"
-                    required
-                  />
+                  <div className={styles["form-row"]}>
+                <label htmlFor="hmoProvider">HMO Provider:</label>
+                <select id="hmoProvider" name="hmoProvider" required>
+                  <option value="">Select HMO Provider</option>
+                  <option value="Maxicare">Maxicare</option>
+                  <option value="PhilCare">PhilCare</option>
+                  <option value="Cocolife">Cocolife</option>
+                  <option value="EtiQa">EtiQa</option>
+                </select>
+                </div>
                 </div>
 
                 <div className={styles["form-row-hmo"]}>
