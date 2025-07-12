@@ -91,7 +91,7 @@ function Booking() {
 
             <div className={styles["form-row"]}>
               <label htmlFor="date">Preferred Date:</label>
-              <input type="date" id="date" name="date" required />
+              <input type="date" id="date" name="date" required min={new Date().toISOString().split("T")[0]} />
 
               <label htmlFor="time">Preferred Time:</label>
               <input
