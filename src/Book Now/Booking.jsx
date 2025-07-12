@@ -101,6 +101,7 @@ function Booking() {
                 required
                 min="10:00"
                 max="18:00"
+                step="1800" // 30-minute steps in seconds
               />
             </div>
 

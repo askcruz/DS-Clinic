@@ -360,7 +360,7 @@ input[type="checkbox"] {
 .inquiry-filters select {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 12px;
   background: white;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 1rem;
@@ -433,7 +433,7 @@ input[type="checkbox"] {
   background: #17496b;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 15px;
@@ -448,10 +448,10 @@ input[type="checkbox"] {
   background: #ac1010;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .action-btn-danger:hover {
@@ -462,9 +462,9 @@ input[type="checkbox"] {
   padding: 4px 6px;
   font-size: 12px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 12px;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
+  font-size: btnpx;
 }
 
 /* Modal styles */
@@ -583,7 +583,7 @@ input[type="checkbox"] {
   margin-right: 10px;
   background: #f8f9fa;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
   font-family: "Segoe UI", Arial, sans-serif;
