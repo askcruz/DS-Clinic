@@ -539,10 +539,44 @@ function Appointment() {
                         />
                       </td>
                       <td>
-                        <input
+                        <select
                           defaultValue={booking.service}
                           onChange={(e) => (booking.service = e.target.value)}
-                        />
+                        >
+                          <option value="">Select a service</option>
+                          <option value="Consultation">Consultation</option>
+                          <option value="Oral Prophylaxis">Oral Prophylaxis</option>
+                          <option value="Oral prophylaxis with Fluoride">
+                            Oral Prophylaxis with Fluoride
+                          </option>
+                          <option value="Deep Scaling">Deep Scaling</option>
+                          <option value="Panoramic Radiograph">
+                            Panoramic Radiograph
+                          </option>
+                          <option value="Complicated Tooth Filing">
+                            Complicated Tooth Filling
+                          </option>
+                          <option value="Odontectomy">Odontectomy</option>
+                          <option value="Temporary Filling">Temporary Filling</option>
+                          <option value="Root Canal Treatment">
+                            Root Canal Treatment
+                          </option>
+                          <option value="Periapical Radiograph">
+                            Periapical Radiograph
+                          </option>
+                          <option value="Teeth Whitening">Teeth Whitening</option>
+                          <option value="Simple Tooth Filing">Simple Tooth Filing</option>
+                          <option value="Pit and Fissure Sealant">
+                            Pit and Fissure Sealant
+                          </option>
+                          <option value="Dental Implant">Dental Implant</option>
+                          <option value="Complicated Tooth Extraction">
+                            Complicated Tooth Extraction
+                          </option>
+                          <option value="Simple Tooth Extraction">
+                            Simple Tooth Extraction
+                          </option>
+                        </select>
                       </td>
                       <td>
                         <input
