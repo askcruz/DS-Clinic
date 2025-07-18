@@ -815,216 +815,91 @@ input[type="checkbox"] {
   background: #145da0;
 }
 
+/* ============ ROOT VARIABLES FOR SCALING ============ */
+:root {
+  --font-heading: clamp(2rem, 2vw + 1rem, 4.2rem);
+  --font-body: clamp(1rem, 0.6vw + 0.8rem, 1.3rem);
+  --font-small: clamp(0.9rem, 0.4vw + 0.5rem, 1rem);
+  --font-button: clamp(1rem, 0.7vw + 0.5rem, 1.3rem);
+  --padding-standard: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+
+
+/* ============ MODAL CENTERING FIX ============ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(16, 50, 74, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal form {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  font-size: var(--font-button);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+/* ============ CHARTS ============ */
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pie-container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 /* ============ RESPONSIVE STYLES ============ */
 
-@media (max-width: 1024px) {
-  .admin-navbar {
-    width: 12rem;
-    min-width: 12rem;
-    max-width: 12rem;
-  }
-
-  .main-content-wrapper,
-  .dashboard-content,
-  .overview-dashboard,
-  .upcoming-section,
-  .missed-section,
-  .profile-container,
-  .appointment-content {
-    margin-left: 12rem;
-    width: calc(100% - 12rem);
-  }
-
-  .appointment-content h1,
-  .dashboard-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .appointment-search input[type="text"] {
-    font-size: 1rem;
-  }
-}
-
+/* Mobile */
 @media (max-width: 768px) {
-  .admin-navbar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0.5rem;
-  }
-
-  .admin-navbar-logo {
-    display: none;
-  }
-
-  .admin-navbar-item {
-    font-size: 1rem;
-    padding: 0.5rem;
-    width: auto;
-  }
-
-  .main-content-wrapper,
-  .dashboard-content,
-  .overview-dashboard,
-  .upcoming-section,
-  .missed-section,
-  .profile-container,
-  .appointment-content {
-    margin-left: 0;
-    width: 100%;
+  .chart-container {
     padding: 1rem;
-  }
-
-  .appointment-content h1,
-  .dashboard-content h1 {
-    font-size: 2rem;
-    padding: 0.8rem 1.2rem;
-  }
-
-  .appointment-table {
-    font-size: 0.9rem;
-    min-width: unset;
-  }
-
-  .appointment-actions {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    margin-top: 2rem;
-  }
-
-  .appointment-navigation {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
-
-  .appointment-search {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .appointment-search input[type="text"],
-  .appointment-search button {
-    width: 100%;
-  }
-
-  .modal {
-    width: 100%;
-    height: 100vh;
-  }
-
-  .modal form {
-    max-width: 90%;
-    max-height: 90vh;
+    min-width: 100%;
   }
 }
 
-/* ============ ULTRA-WIDE SCREENS (≥ 2560px) ============ */
-@media (min-width: 2560px) {
-  .appointment-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 2000px;
-    padding: 2.5rem;
-    box-sizing: border-box;
-  }
-
-  .table-responsive {
-    max-width: 2000px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: auto;
-  }
-
-  .appointment-table {
-    width: 100%;
-    max-width: 2000px;
-    margin: 0 auto;
-    font-size: 1.3rem;
-  }
-
-  .appointment-content h1,
-  .dashboard-content h1 {
-    font-size: 4.2rem;
-    padding: 1.5rem 2.5rem;
-  }
-
-  .overview-item {
-    min-width: 260px;
-    padding: 2.5rem;
-    font-size: 1.4rem;
-  }
-
-  .overview-number {
-    font-size: 2.5rem;
-  }
-
-  .modal form {
-    font-size: 1.4rem;
-    max-width: 700px;
-  }
-
-  .profile-card {
-    min-width: 700px;
-    min-height: 320px;
-  }
-
-  .profile-avatar {
-    width: 140px;
-    height: 140px;
-  }
-
-  .appointment-actions button,
-  .appointment-search button,
-  .appointment-search input[type="text"] {
-    font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .appointment-navigation > button {
-    font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-  }
-
-  .view-toggle {
-    font-size: 1.1rem;
-    padding: 10px 20px;
-  }
-}
-
+/* Large screens: 1920px–2559px */
 @media (min-width: 1920px) and (max-width: 2559px) {
   .appointment-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
     max-width: 1600px;
     padding: 2rem;
-    box-sizing: border-box;
   }
 
-  .table-responsive {
+  .table-responsive,
+  .appointment-table {
     max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: auto;
   }
 
   .appointment-table {
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
     font-size: 1.2rem;
-  }
-
-  .appointment-content h1,
-  .dashboard-content h1 {
-    font-size: 3.5rem;
-    padding: 1.2rem 2rem;
   }
 
   .overview-item {
@@ -1035,11 +910,6 @@ input[type="checkbox"] {
 
   .overview-number {
     font-size: 2.3rem;
-  }
-
-  .modal form {
-    font-size: 1.2rem;
-    max-width: 600px;
   }
 
   .profile-card {
@@ -1054,11 +924,7 @@ input[type="checkbox"] {
 
   .appointment-actions button,
   .appointment-search button,
-  .appointment-search input[type="text"] {
-    font-size: 1.2rem;
-    padding: 0.7rem 1.3rem;
-  }
-
+  .appointment-search input[type="text"],
   .appointment-navigation > button {
     font-size: 1.2rem;
     padding: 0.7rem 1.3rem;
@@ -1070,91 +936,52 @@ input[type="checkbox"] {
   }
 }
 
-.charts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-}
+/* Ultra-wide screens: 2560px+ */
+@media (min-width: 2560px) {
+  .appointment-content {
+    max-width: 2000px;
+    padding: 2.5rem;
+  }
 
-.chart-container {
-    flex: 1;
-    min-width: 300px;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+  .table-responsive,
+  .appointment-table {
+    max-width: 2000px;
+  }
 
-/* Specific style for pie chart container */
-.pie-container {
-    max-width: 400px; /* Smaller width for pie chart */
-}
+  .appointment-table {
+    font-size: 1.3rem;
+  }
 
-@media (max-width: 768px) {
-    .chart-container {
-        padding: 1rem;
-        min-width: 100%;
-    }
-}
+  .overview-item {
+    min-width: 260px;
+    padding: 2.5rem;
+    font-size: 1.4rem;
+  }
 
+  .overview-number {
+    font-size: 2.5rem;
+  }
 
+  .profile-card {
+    min-width: 700px;
+    min-height: 320px;
+  }
 
-/* ============ ROOT VARIABLES FOR SCALING ============ */
-:root {
-  --font-heading: clamp(2rem, 2vw + 1rem, 4.2rem);
-  --font-body: clamp(1rem, 0.6vw + 0.8rem, 1.3rem);
-  --font-small: clamp(0.9rem, 0.4vw + 0.5rem, 1rem);
-  --font-button: clamp(1rem, 0.7vw + 0.5rem, 1.3rem);
-  --padding-standard: clamp(0.8rem, 1vw, 1.5rem);
-}
+  .profile-avatar {
+    width: 140px;
+    height: 140px;
+  }
 
-/* Overwrite font-sizes using clamp() */
-.appointment-content h1,
-.dashboard-content h1 {
-  font-size: var(--font-heading);
-  padding: var(--padding-standard);
-}
+  .appointment-actions button,
+  .appointment-search button,
+  .appointment-search input[type="text"],
+  .appointment-navigation > button {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
 
-.overview-number,
-.unread-count {
-  font-size: clamp(1.5rem, 1vw + 1rem, 2.5rem);
-}
-
-.overview-label,
-.appointment-table,
-.status-select,
-.status-badge,
-.action-btn,
-.appointment-table td,
-.profile-info,
-.missed-section li,
-.upcoming-list li {
-  font-size: var(--font-body);
-}
-
-.appointment-search input[type="text"],
-.modal form input,
-.modal form select,
-.profile-edit-btn,
-.modal-footer button,
-.view-toggle,
-.appointment-actions button,
-.appointment-navigation > button,
-.modal form button[type="submit"],
-.modal form button[type="button"] {
-  font-size: var(--font-button);
-  padding: var(--padding-standard);
-}
-
-/* Set fallback where needed */
-.profile-card {
-  font-size: var(--font-body);
-  min-width: 320px;
-  min-height: 200px;
-}
-
-/* Optional tweak for better readability */
-.appointment-table th {
-  font-size: var(--font-small);
+  .view-toggle {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
 }
