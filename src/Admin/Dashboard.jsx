@@ -92,24 +92,22 @@ function Dashboard() {
     fetchUpcomingAppointments();
 
     const fetchMissedAppointments = async () => {
+      const today = new Date();
+      const formatDate = (date) => date.toISOString().split("T")[0]; // "YYYY-MM-DD"
+
       try {
-        const { data: bookings, error } = await supabase
+        const { data: missed, error } = await supabase
           .from("booking")
-          .select("");
+          .select("*")
+          .lt("date", formatDate(today)) // Only fetch dates before today
+          .eq("status", "Pending") // Only fetch appointments still pending
+          .order("date", { ascending: false });
 
         if (error) throw error;
 
-        const now = new Date();
-
-        const missed = bookings.filter((b) => {
-          if (b.status !== "Pending") return false;
-          const apptDateTime = new Date(`${b.date}T${b.time}`);
-          return apptDateTime < now;
-        });
-
         setMissedAppointments(missed);
       } catch (err) {
-        console.error("Error", err);
+        console.error("Error fetching missed appointments:", err);
       }
     };
 
