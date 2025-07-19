@@ -194,7 +194,7 @@ function Booking() {
                   <label htmlFor="hmoProvider">HMO Provider:</label>
                   <select id="hmoProvider" name="hmoProvider" required>
                     <option value="">Select HMO Provider</option>
-                    <option value="Maxicare">Maxicare</option>
+                    <option value="Valuecare">Maxicare</option>
                     <option value="PhilCare">PhilCare</option>
                     <option value="Cocolife">Cocolife</option>
                     <option value="EtiQa">EtiQa</option>

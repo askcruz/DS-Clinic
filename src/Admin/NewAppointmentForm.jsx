@@ -68,16 +68,16 @@ function NewAppointmentForm({ onSubmit, onClose }) {
                 <option value="Confirmed">Confirmed</option>
                 <option value="Cancelled">Cancelled</option>
             </select>
-            <select name="hmo" defaultValue="HMO">
+            <select name="hmo" defaultValue="">
                 <option value="">No</option>
                 <option value="Maxicare">Yes</option>
             </select>
             <input name="company" placeholder="Company" />
             <input name="validId" placeholder="Valid ID No." />
             <input name="occupation" placeholder="Occupation" />
-            <select name="hmo" defaultValue="HMO Provider">
+            <select name="hmoProvider" defaultValue="">
                 <option value="">HMO Provider</option>
-                <option value="Maxicare">Maxicare</option>
+                <option value="Maxicare">Valuecare</option>
                 <option value="PhilCare">PhilCare</option>
                 <option value="Cocolife">Cocolife</option>
                 <option value="EtiQa">EtiQa</option>

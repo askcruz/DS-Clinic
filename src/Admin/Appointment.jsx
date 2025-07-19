@@ -640,7 +640,7 @@ function Appointment() {
                           onChange={(e) => (booking.hmoProvider = e.target.value)}
                         >
                           <option value="">None</option>
-                          <option value="Maxicare">Maxicare</option>
+                          <option value="Maxicare">Valuecare</option>
                           <option value="PhilCare">PhilCare</option>
                           <option value="Cocolife">Cocolife</option>
                           <option value="EtiQa">EtiQa</option>
