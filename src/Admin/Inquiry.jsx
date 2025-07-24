@@ -100,7 +100,7 @@ function Inquiry() {
   const updateInquiryStatus = async (id, newStatus) => {
     try {
       console.log(`Updating inquiry ${id} status to ${newStatus}`);
-      
+
       const { data, error } = await supabase
         .from("inquiry_entries")
         .update({ status: newStatus })
@@ -220,8 +220,6 @@ function Inquiry() {
     }
   };
 
-
-
   const viewInquiry = async (inquiry) => {
     // Mark as read if it's unread and not archived
     if (inquiry.status === "unread" && !inquiry.is_archived) {
@@ -313,15 +311,16 @@ function Inquiry() {
           </div>
           <div className={styles["inquiry-filters"]}>
             <button
-              className={`${styles["view-toggle"]} ${
+              className={`${styles["inbox-toggle"]} ${
                 !viewArchived ? styles["active"] : ""
               }`}
               onClick={() => setViewArchived(false)}
             >
               Inbox ({inquiries.length})
             </button>
+
             <button
-              className={`${styles["view-toggle"]} ${
+              className={`${styles["archived-toggle"]} ${
                 viewArchived ? styles["active"] : ""
               }`}
               onClick={() => setViewArchived(true)}
@@ -330,7 +329,11 @@ function Inquiry() {
             </button>
 
             {!viewArchived && (
-              <select value={statusFilter} onChange={handleStatusFilter}>
+              <select
+                value={statusFilter}
+                onChange={handleStatusFilter}
+                className={styles["status-select"]}
+              >
                 <option value="all">All Status</option>
                 <option value="unread">Unread</option>
                 <option value="read">Read</option>
@@ -403,7 +406,7 @@ function Inquiry() {
                     <td>{formatDate(inquiry.created_at)}</td>
                     <td className={styles["actions-cell"]}>
                       <button
-                        className={styles["action-btn"]}
+                        className={`${styles["action-btn"]} ${styles["view-btn"]}`}
                         onClick={() => viewInquiry(inquiry)}
                         title="View full message"
                       >
@@ -413,14 +416,15 @@ function Inquiry() {
                       {viewArchived ? (
                         <>
                           <button
-                            className={styles["action-btn"]}
+                            className={`${styles["action-btn"]} ${styles["restore-btn"]}`}
                             onClick={() => restoreInquiry(inquiry.id)}
                             title="Restore to inbox"
                           >
                             Restore
                           </button>
+
                           <button
-                            className={styles["action-btn-danger"]}
+                            className={`${styles["action-btn"]} ${styles["delete-btn"]}`}
                             onClick={() => permanentlyDelete(inquiry.id)}
                             title="Delete permanently"
                           >
@@ -442,7 +446,7 @@ function Inquiry() {
                           </select>
 
                           <button
-                            className={styles["action-btn-danger"]}
+                            className={`${styles["action-btn"]} ${styles["archive-btn"]}`}
                             onClick={() => archiveInquiry(inquiry.id)}
                             title="Archive this inquiry"
                           >

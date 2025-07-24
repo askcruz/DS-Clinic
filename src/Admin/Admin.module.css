@@ -373,7 +373,7 @@ input[type="checkbox"] {
 }
 
 .unread-count {
-  color: #ac1010;
+  color: #b94f4f;
   font-weight: bold;
   font-size: 2rem;
   line-height: 1;
@@ -393,32 +393,28 @@ input[type="checkbox"] {
 }
 
 .status-badge {
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.status-unread {
-  background-color: #ac1010;
-  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
   font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
+  display: inline-block;
+  line-height: 1;
 }
 
 .status-read {
-  background-color: #17496b;
+  background-color: #4986af;
   color: white;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
+}
+
+.status-unread {
+  background-color: #b94f4f;
+  color: white;
 }
 
 .status-resolved {
-  background-color: #2d8540;
+  background-color: rgb(90, 163, 93);
   color: white;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
 }
 
 .actions-cell {
@@ -429,15 +425,18 @@ input[type="checkbox"] {
 }
 
 .action-btn {
-  padding: 5px 8px;
-  background: #17496b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: white;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 15px;
+  transition: background-color 0.2s ease;
+  line-height: 1;
 }
+
 
 .action-btn:hover {
   background: #2980b9;
@@ -577,31 +576,62 @@ input[type="checkbox"] {
   opacity: 0.9;
 }
 
-/* View toggle buttons */
-.view-toggle {
+/* Inbox toggle button */
+.inbox-toggle {
   padding: 8px 16px;
+  border-radius: 40px;
+  border: 1px solid #ddd;
   margin-right: 10px;
   background: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
   font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.view-toggle.active {
+.inbox-toggle.active {
   background: #17496b;
   color: white;
   border-color: #10324a;
 }
 
-.view-toggle:hover {
+.inbox-toggle:hover {
   background: #e9ecef;
 }
 
-.view-toggle.active:hover {
+.inbox-toggle.active:hover {
   background: rgb(39, 138, 204);
 }
+
+.archived-toggle {
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  background: #f8f9fa;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.archived-toggle.active {
+  background: #17496b;
+  color: white;
+  border-color: #10324a;
+}
+
+.archived-toggle:hover {
+  background: #e9ecef;
+}
+
+.archived-toggle.active:hover {
+  background: rgb(39, 138, 204);
+}
+
+
 
 /*Dashboard section*/
 
@@ -1207,4 +1237,46 @@ input[type="checkbox"] {
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
+}
+
+.view-btn {
+  background-color: #44aebe; /* Cyan/teal */
+}
+
+.view-btn:hover {
+  background-color: #34818d;
+}
+
+
+/* Specific variant for Archive */
+.archive-btn {
+  background-color: #424242;
+}
+
+.archive-btn:hover {
+  background-color: #333333;
+}
+
+.status-select {
+  padding: 2px 5px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+.restore-btn {
+  background-color: #757575;
+  color: white;
+}
+
+.restore-btn:hover {
+  background-color: #555454; 
+  color: white;
+}
+
+.delete-btn {
+  background-color: #a52222; 
+}
+
+.delete-btn:hover {
+  background-color: rgb(107, 27, 27);
 }
